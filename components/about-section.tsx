@@ -17,7 +17,7 @@ export default function AboutSection() {
       <div className="mx-auto max-w-6xl px-4">
 
         {/* Cambiamos grid-cols-2 por grid-cols-12 para controlar proporciones exactas */}
-        <div className="relative z-0 grid items-end gap-6 md:grid-cols-12 md:gap-8 pb-10">
+        <div className="relative z-0 grid items-end gap-6 pb-10 md:grid-cols-12 md:gap-8">
 
           {/* 
             COLUMNA IZQUIERDA: 5 de 12 columnas (~41.6% del ancho)

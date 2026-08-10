@@ -6,7 +6,7 @@ export default function SponsorSection() {
     <section
       aria-labelledby="sponsor-heading"
       /* Degradado tricolor: Verde -> Azul Centro -> Verde */
-      className="relative flex min-h-[90vh] w-full items-center justify-center bg-gradient-to-r from-emerald-600 via-blue-900 to-emerald-600 px-4 py-8 md:py-12"
+      className="relative flex min-h-[70vh] w-full items-center justify-center bg-gradient-to-r from-emerald-600 via-blue-900 to-emerald-600 px-4 py-12 sm:min-h-[80vh] md:py-16"
     >
       <div className="mx-auto flex w-full max-w-4xl flex-col items-center justify-center text-center">
 

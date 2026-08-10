@@ -93,7 +93,7 @@ export default function StatsCounter() {
           <div className="col-span-2 md:col-span-1 pr-2">
             <h2
               id="stats-heading"
-              className="text-3xl font-extrabold leading-tight tracking-tight text-white md:text-3xl lg:text-4xl"
+              className="text-2xl font-extrabold leading-tight tracking-tight text-white sm:text-3xl md:text-3xl lg:text-4xl"
             >
               Congreso <br className="hidden md:block" />
               2025

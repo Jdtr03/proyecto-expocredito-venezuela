@@ -21,8 +21,8 @@ export default function FloorPlanSection() {
         </div>
 
         {/* Pie de página de la sección (el texto de cierre original) */}
-        <div className="mt-16 text-center">
-          <div className="mt-10">
+        <div className="mt-8 text-center md:mt-16">
+          <div className="mt-6 md:mt-10">
             <a
               href="#contacto"
               className="inline-block rounded-full bg-red-600 px-10 py-3.5 text-sm font-semibold text-white shadow-lg transition-colors hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"

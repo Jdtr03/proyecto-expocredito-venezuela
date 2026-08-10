@@ -128,10 +128,10 @@ export default function AppPromoSection() {
         </div>
 
         {/* Layout de 3 columnas */}
-        <div className="grid items-center gap-10 lg:grid-cols-3 lg:gap-4">
+        <div className="grid items-center gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-4">
 
           {/* Columna Izquierda: App Oficial (Alineada a la derecha y pegada al celular) */}
-          <div className="order-2 flex flex-col items-center text-center lg:order-1 lg:items-end lg:pr-12 lg:text-right">
+          <div className="order-2 flex flex-col items-center text-center md:order-1 md:col-span-2 lg:col-span-1 lg:order-1 lg:items-end lg:pr-12 lg:text-right">
             <div className="lg:max-w-xs">
               <h3 className="text-3xl font-semibold text-white">App oficial</h3>
               <p className="mt-3 text-sm leading-relaxed text-gray-400">
@@ -154,12 +154,12 @@ export default function AppPromoSection() {
           </div>
 
           {/* Columna Central: Mockup del Teléfono */}
-          <div className="order-1 lg:order-2">
+          <div className="order-1 md:order-2 md:col-span-1 lg:order-2">
             <PhoneMockup />
           </div>
 
           {/* Columna Derecha: Beneficios */}
-          <div className="order-3 space-y-8 lg:order-3">
+          <div className="order-3 space-y-8 md:col-span-1 lg:order-3">
             <div>
               <h3 className="mb-4 text-xl font-bold text-orange-500">Para los asistentes</h3>
               <ul className="space-y-3">

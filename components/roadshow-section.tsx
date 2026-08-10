@@ -15,7 +15,7 @@ export default function RoadshowSection() {
           />
         </div>
 
-        <h2 className="text-center text-3xl font-black tracking-tight text-gray-950 sm:text-4xl md:text-5xl lg:text-6xl">
+        <h2 className="text-center text-2xl font-black tracking-tight text-gray-950 sm:text-3xl md:text-4xl lg:text-6xl">
           La Ruta del Crédito Venezuela 2026
         </h2>
       </div>
@@ -34,8 +34,8 @@ export default function RoadshowSection() {
 
         <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 py-10 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-12 lg:px-8 lg:py-14">
           {/* Columna izquierda */}
-          <div className="order-2 flex flex-col items-start pl-4 sm:pl-8 lg:order-1 lg:pl-12">
-            <h3 className="text-4xl font-light text-white sm:text-5xl lg:text-6xl">Únete a la Ruta</h3>
+          <div className="order-2 flex flex-col items-start pl-0 sm:pl-4 lg:order-1 lg:pl-12">
+            <h3 className="text-3xl font-light text-white sm:text-4xl lg:text-6xl">Únete a la Ruta</h3>
 
             <div className="mt-6 space-y-1">
               <p className="text-sm text-blue-100">Mind Work - El Rosal Caracas</p>
