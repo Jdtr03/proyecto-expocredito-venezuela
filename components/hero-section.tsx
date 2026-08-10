@@ -15,19 +15,19 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 items-stretch overflow-hidden rounded-2xl shadow-2xl sm:rounded-3xl lg:grid-cols-2">
 
           {/* Columna Izquierda: Copy & CTAs */}
-          <div className="relative flex flex-col justify-between bg-gradient-to-r from-[#0d8736] via-[#095759] to-[#0c2a71] px-5 py-8 sm:px-10 sm:py-10 lg:py-14">
+          <div className="relative flex flex-col justify-between bg-gradient-to-r from-[#0d8736] via-[#095759] to-[#0c2a71] px-5 py-8 sm:px-8 sm:py-10 lg:py-10 xl:py-14">
             <div>
               <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/90 sm:text-xs">
                 1er Congreso de Conexiones Crediticias
               </p>
 
-              <h1 className="mt-3 font-sans text-2xl font-black leading-tight text-white sm:text-4xl lg:text-5xl">
+              <h1 className="mt-3 font-sans text-2xl font-black leading-tight text-white sm:text-3xl lg:text-4xl xl:text-5xl">
                 Expo Créditos <br className="hidden sm:inline" />
                 Venezuela Únete <br className="hidden sm:inline" />
                 a la Expo
               </h1>
 
-              <p className="mt-3 text-base font-bold italic text-[#f2c14e] sm:text-lg">
+              <p className="mt-3 text-base font-bold italic text-[#f2c14e] sm:text-lg lg:text-base xl:text-lg">
                 más esperada de Venezuela
               </p>
 

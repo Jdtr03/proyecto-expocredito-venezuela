@@ -3,7 +3,7 @@ import Image from "next/image" // Asumiendo que usas Next.js.
 export default function FloorPlanSection() {
   return (
     // Sección completa con el fondo azul oscuro original
-    <section className="bg-[#0a1a3f] py-16 text-white md:py-24">
+    <section className="bg-[#0a1a3f] py-10 text-white md:py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 flex flex-col items-center">
 
         {/* Contenedor de la Imagen: Ahora es el elemento central */}

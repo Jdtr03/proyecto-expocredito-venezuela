@@ -111,7 +111,7 @@ function PhoneMockup() {
 
 export default function AppPromoSection() {
   return (
-    <section className="bg-[#0f1e3d] px-4 py-16 md:py-20">
+    <section className="bg-[#0f1e3d] px-4 py-10 md:py-14 lg:py-16">
       <div className="mx-auto max-w-6xl">
         {/* Encabezado Principal */}
         <div className="mx-auto mb-12 max-w-3xl text-center">
@@ -131,7 +131,7 @@ export default function AppPromoSection() {
         <div className="grid items-center gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-4">
 
           {/* Columna Izquierda: App Oficial (Alineada a la derecha y pegada al celular) */}
-          <div className="order-2 flex flex-col items-center text-center md:order-1 md:col-span-2 lg:col-span-1 lg:order-1 lg:items-end lg:pr-12 lg:text-right">
+          <div className="order-2 flex flex-col items-center text-center md:order-1 md:col-span-2 lg:col-span-1 lg:order-1 lg:items-end lg:pr-6 xl:pr-12 lg:text-right">
             <div className="lg:max-w-xs">
               <h3 className="text-3xl font-semibold text-white">App oficial</h3>
               <p className="mt-3 text-sm leading-relaxed text-gray-400">

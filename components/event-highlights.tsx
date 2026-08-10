@@ -17,10 +17,10 @@ export default function EventHighlights() {
   const [selectedImage, setSelectedImage] = useState<PresentationImage | null>(null)
 
   return (
-    <section className="overflow-hidden bg-gray-50 py-16 md:py-20">
+    <section className="overflow-hidden bg-gray-50 py-10 md:py-14 lg:py-16">
       <div className="mx-auto max-w-7xl px-4">
         {/* Encabezado Principal */}
-        <header className="mx-auto mb-10 max-w-2xl text-center md:mb-14">
+        <header className="mx-auto mb-8 max-w-2xl text-center md:mb-12">
           <h2 className="text-balance text-3xl font-extrabold tracking-tight text-blue-950 md:text-4xl">
             Expo Créditos Venezuela
           </h2>

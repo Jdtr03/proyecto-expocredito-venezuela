@@ -6,7 +6,7 @@ export default function SponsorSection() {
     <section
       aria-labelledby="sponsor-heading"
       /* Degradado tricolor: Verde -> Azul Centro -> Verde */
-      className="relative flex min-h-[70vh] w-full items-center justify-center bg-gradient-to-r from-emerald-600 via-blue-900 to-emerald-600 px-4 py-12 sm:min-h-[80vh] md:py-16"
+      className="relative flex min-h-[60vh] w-full items-center justify-center bg-gradient-to-r from-emerald-600 via-blue-900 to-emerald-600 px-4 py-10 sm:min-h-[70vh] lg:min-h-[75vh] md:py-14"
     >
       <div className="mx-auto flex w-full max-w-4xl flex-col items-center justify-center text-center">
 
@@ -31,7 +31,7 @@ export default function SponsorSection() {
             alt="Mockup de stands de exposición Expo Créditos Venezuela para patrocinadores"
             width={1200}
             height={620}
-            className="max-h-[50vh] w-full object-cover sm:max-h-[55vh]"
+            className="max-h-[40vh] w-full object-cover sm:max-h-[48vh] lg:max-h-[52vh]"
             priority
           />
         </div>

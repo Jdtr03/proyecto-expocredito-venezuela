@@ -35,7 +35,7 @@ function ExpoLogo() {
         alt="Expo Créditos Venezuela 2026"
         width={450}
         height={160}
-        className="h-28 w-auto max-w-[280px] object-contain sm:h-36 sm:max-w-none md:h-40 lg:h-44"
+        className="h-24 w-auto max-w-[240px] object-contain sm:h-32 sm:max-w-none md:h-36 lg:h-40"
         priority
       />
     </a>

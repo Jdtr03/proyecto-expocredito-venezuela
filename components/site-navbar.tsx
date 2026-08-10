@@ -28,7 +28,7 @@ export function Logo() {
       <img
         src="/images/LOGO-EXPO-CREDITOS-HORIZONTAL-01.webp"
         alt="Expo Créditos Venezuela 2026"
-        className="h-10 w-auto object-contain sm:h-12"
+        className="h-9 w-auto object-contain sm:h-10 lg:h-11 xl:h-12"
       />
     </a>
   );
@@ -52,12 +52,12 @@ export default function SiteNavbar() {
           <Logo />
 
           {/* Desktop nav links */}
-          <ul className="hidden items-center gap-6 xl:flex">
+          <ul className="hidden items-center gap-3 lg:flex xl:gap-6">
             {NAV_LINKS.map((link) => (
               <li key={link.label}>
                 <a
                   href={link.href}
-                  className="text-sm font-bold text-gray-800 transition-colors hover:text-green-600"
+                  className="text-xs font-bold text-gray-800 transition-colors hover:text-green-600 xl:text-sm"
                 >
                   {link.label}
                 </a>
@@ -66,12 +66,12 @@ export default function SiteNavbar() {
           </ul>
 
           {/* Desktop CTA buttons */}
-          <div className="hidden items-center gap-2 lg:flex">
+          <div className="hidden items-center gap-1.5 lg:flex xl:gap-2">
             {CTA_BUTTONS.map((btn) => (
               <button
                 key={btn.label}
                 type="button"
-                className={`rounded-full px-3 py-1.5 text-xs font-semibold text-white transition-colors ${btn.className}`}
+                className={`rounded-full px-2.5 py-1.5 text-[11px] font-semibold text-white transition-colors xl:px-3 xl:text-xs ${btn.className}`}
               >
                 {btn.label}
               </button>
