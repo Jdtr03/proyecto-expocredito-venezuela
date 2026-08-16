@@ -48,13 +48,13 @@ export default function EventHighlights() {
                 - overflow-hidden + rounded-3xl: Asegura que la imagen siga la forma redondeada.
                 - Sin bg-slate-900: Eliminamos el fondo para que no haya bordes de otro color.
               */
-              className="group/card relative h-auto w-[280px] shrink-0 overflow-hidden rounded-3xl shadow-lg transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-blue-500/50 sm:w-[320px] md:w-[360px] aspect-[3/4]"
+              className="group/card relative h-auto w-[240px] shrink-0 overflow-hidden rounded-3xl shadow-lg transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-blue-500/50 sm:w-[280px] md:w-[360px] aspect-[3/4]"
             >
               <Image
                 src={item.src}
                 alt={item.alt}
                 fill
-                sizes="(max-width: 768px) 320px, 360px"
+                sizes="(max-width: 640px) 240px, (max-width: 768px) 280px, 360px"
                 /* 🔑 Volvemos a object-cover para que llene la tarjeta perfectamente */
                 className="object-cover transition-transform duration-500 group-hover/card:scale-105"
                 priority={index < 4} // Prioridad de carga para las primeras imágenes

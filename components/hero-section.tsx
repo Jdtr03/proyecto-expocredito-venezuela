@@ -97,7 +97,7 @@ export default function HeroSection() {
           return (
             <div
               key={slide.id}
-              className={`grid grid-cols-1 items-stretch overflow-hidden rounded-2xl shadow-2xl sm:rounded-3xl lg:grid-cols-2 ${styles.cardBg} transition-all duration-700 ease-in-out ${isActiveSlide
+              className={`grid grid-cols-1 items-stretch overflow-hidden rounded-2xl shadow-2xl sm:rounded-3xl md:grid-cols-2 ${styles.cardBg} transition-all duration-700 ease-in-out ${isActiveSlide
                   ? "opacity-100 relative z-10 translate-x-0"
                   : "opacity-0 absolute inset-x-4 sm:inset-x-6 lg:inset-x-8 top-0 pointer-events-none translate-x-4"
                 }`}
@@ -114,10 +114,10 @@ export default function HeroSection() {
                   </h1>
 
                   {/* Renderizado de Botón Único o Múltiple */}
-                  <div className="mt-6 flex flex-wrap items-center gap-3">
+                  <div className="mt-6 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 sm:gap-4">
                     <a
                       href={slide.primaryCta.href}
-                      className={`inline-block text-xs sm:text-sm transition ${styles.primaryBtn}`}
+                      className={`inline-block text-center text-sm transition ${styles.primaryBtn}`}
                     >
                       {slide.primaryCta.label}
                     </a>
@@ -125,7 +125,7 @@ export default function HeroSection() {
                     {slide.secondaryCta && styles.secondaryBtn && (
                       <a
                         href={slide.secondaryCta.href}
-                        className={`inline-block text-xs sm:text-sm transition ${styles.secondaryBtn}`}
+                        className={`inline-block text-center text-sm transition ${styles.secondaryBtn}`}
                       >
                         {slide.secondaryCta.label}
                       </a>
@@ -156,24 +156,24 @@ export default function HeroSection() {
               </div>
 
               {/* Columna Derecha: Imagen con Overlay Dinámico */}
-              <div className={`relative min-h-[280px] sm:min-h-[360px] lg:min-h-full w-full overflow-hidden ${styles.cardBg}`}>
+              <div className={`relative min-h-[240px] sm:min-h-[300px] md:min-h-full w-full overflow-hidden ${styles.cardBg}`}>
                 <Image
                   src={slide.image.src}
                   alt={slide.image.alt}
                   fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   priority={isActiveSlide}
                   className="object-cover object-center"
                 />
 
-                {/* Capa de degradado adaptativa (solo visible en pantallas lg+) */}
+                {/* Capa de degradado adaptativa (solo visible en pantallas md+) */}
                 <div
-                  className={`pointer-events-none absolute inset-y-0 left-0 hidden w-1/2 bg-gradient-to-r ${styles.overlayGradient} z-10 lg:block`}
+                  className={`pointer-events-none absolute inset-y-0 left-0 hidden w-1/2 bg-gradient-to-r ${styles.overlayGradient} z-10 md:block`}
                 />
 
                 {/* Capa de degradado adaptativa superior para dispositivos móviles */}
                 <div
-                  className={`pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b ${styles.overlayGradient.replace('to-r', 'to-b')} z-10 lg:hidden`}
+                  className={`pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b ${styles.overlayGradient.replace('to-r', 'to-b')} z-10 md:hidden`}
                 />
               </div>
             </div>

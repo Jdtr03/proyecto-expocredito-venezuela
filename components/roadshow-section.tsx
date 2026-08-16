@@ -33,9 +33,9 @@ export default function RoadshowSection() {
           aria-hidden="true"
         />
 
-        <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 py-8 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-10 lg:px-8 lg:py-10 xl:py-14">
+        <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 py-8 sm:px-6 md:grid-cols-2 md:items-center md:gap-8 lg:gap-10 lg:px-8 lg:py-10 xl:py-14">
           {/* Columna izquierda */}
-          <div className="order-2 flex flex-col items-start pl-0 sm:pl-4 lg:order-1 lg:pl-12">
+          <div className="order-2 flex flex-col items-start pl-0 sm:pl-4 md:order-1 md:pl-8 lg:pl-12">
             <h3 className="text-3xl font-light text-white sm:text-4xl lg:text-4xl xl:text-5xl 2xl:text-6xl">Únete a la Ruta</h3>
 
             <div className="mt-6 space-y-1">
@@ -65,7 +65,7 @@ export default function RoadshowSection() {
           </div>
 
           {/* Columna derecha */}
-          <div className="order-1 lg:order-2">
+          <div className="order-1 md:order-2">
             <p className="mb-4 text-right text-lg font-bold text-white sm:text-xl lg:text-2xl">
               Sábado 15 de Agosto 2026
             </p>

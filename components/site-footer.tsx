@@ -33,14 +33,14 @@ const legalModalData: Record<
     category: "Protección de Datos & CRM",
     icon: <ShieldCheck className="h-5 w-5 text-[#008135]" />,
     content: (
-      <div className="space-y-4 text-xs sm:text-sm leading-relaxed text-slate-300">
-        <section className="rounded-xl bg-emerald-950/40 p-3 sm:p-4 border border-emerald-500/30">
+      <div className="space-y-4 text-sm sm:text-base leading-relaxed text-slate-300">
+        <section className="rounded-xl bg-emerald-950/40 p-4 sm:p-5 border border-emerald-500/30">
           <h4 className="font-bold text-white text-sm sm:text-base mb-1">Quiénes somos</h4>
           <p className="text-slate-200">Somos un producto llamado Expo Créditos Venezuela.</p>
         </section>
 
         <section className="space-y-1.5">
-          <h4 className="font-bold text-[#008135] border-b border-slate-800 pb-1 text-[11px] sm:text-xs uppercase tracking-wider">
+          <h4 className="font-bold text-[#008135] border-b border-slate-800 pb-1 text-xs sm:text-sm uppercase tracking-wider">
             PRIMERO: Responsable del Tratamiento de Datos
           </h4>
           <p>
@@ -49,7 +49,7 @@ const legalModalData: Record<
         </section>
 
         <section className="space-y-1.5">
-          <h4 className="font-bold text-[#008135] border-b border-slate-800 pb-1 text-[11px] sm:text-xs uppercase tracking-wider">
+          <h4 className="font-bold text-[#008135] border-b border-slate-800 pb-1 text-xs sm:text-sm uppercase tracking-wider">
             SEGUNDO: Base Técnica de Captura y Procesamiento
           </h4>
           <p>
@@ -58,7 +58,7 @@ const legalModalData: Record<
         </section>
 
         <section className="space-y-1.5">
-          <h4 className="font-bold text-[#008135] border-b border-slate-800 pb-1 text-[11px] sm:text-xs uppercase tracking-wider">
+          <h4 className="font-bold text-[#008135] border-b border-slate-800 pb-1 text-xs sm:text-sm uppercase tracking-wider">
             TERCERO: Finalidad Limitada del Tratamiento
           </h4>
           <p>
@@ -75,7 +75,7 @@ const legalModalData: Record<
         </section>
 
         <section className="space-y-1.5">
-          <h4 className="font-bold text-[#008135] border-b border-slate-800 pb-1 text-[11px] sm:text-xs uppercase tracking-wider">
+          <h4 className="font-bold text-[#008135] border-b border-slate-800 pb-1 text-xs sm:text-sm uppercase tracking-wider">
             CUARTO: Cláusula de Exclusión de Datos Financieros Sensibles (Cumplimiento Regulatorio SUDEBAN)
           </h4>
           <p>
@@ -84,7 +84,7 @@ const legalModalData: Record<
         </section>
 
         <section className="space-y-1.5">
-          <h4 className="font-bold text-[#008135] border-b border-slate-800 pb-1 text-[11px] sm:text-xs uppercase tracking-wider">
+          <h4 className="font-bold text-[#008135] border-b border-slate-800 pb-1 text-xs sm:text-sm uppercase tracking-wider">
             QUINTO: Filtros de Seguridad y Validaciones Corporativas (Prevención de Fraude)
           </h4>
           <p>
@@ -103,9 +103,9 @@ const legalModalData: Record<
     category: "Aviso Legal & Alcance",
     icon: <Scale className="h-5 w-5 text-amber-400" />,
     content: (
-      <div className="space-y-4 text-xs sm:text-sm leading-relaxed text-slate-300">
+      <div className="space-y-4 text-sm sm:text-base leading-relaxed text-slate-300">
         <section className="space-y-1.5">
-          <h4 className="font-bold text-amber-400 border-b border-slate-800 pb-1 text-[11px] sm:text-xs uppercase tracking-wider">
+          <h4 className="font-bold text-amber-400 border-b border-slate-800 pb-1 text-xs sm:text-sm uppercase tracking-wider">
             PRIMERO: Delimitación del Rol Institucional (Vitrina Comercial)
           </h4>
           <p>
@@ -114,7 +114,7 @@ const legalModalData: Record<
         </section>
 
         <section className="space-y-1.5">
-          <h4 className="font-bold text-amber-400 border-b border-slate-800 pb-1 text-[11px] sm:text-xs uppercase tracking-wider">
+          <h4 className="font-bold text-amber-400 border-b border-slate-800 pb-1 text-xs sm:text-sm uppercase tracking-wider">
             SEGUNDO: Ausencia de Responsabilidad Solidaria o Subsidiaria
           </h4>
           <p>
@@ -128,7 +128,7 @@ const legalModalData: Record<
         </section>
 
         <section className="space-y-1.5">
-          <h4 className="font-bold text-amber-400 border-b border-slate-800 pb-1 text-[11px] sm:text-xs uppercase tracking-wider">
+          <h4 className="font-bold text-amber-400 border-b border-slate-800 pb-1 text-xs sm:text-sm uppercase tracking-wider">
             TERCERO: Autonomía de las Entidades Participantes
           </h4>
           <p>
@@ -147,9 +147,9 @@ const legalModalData: Record<
     category: "Condiciones Comerciales",
     icon: <FileText className="h-5 w-5 text-blue-400" />,
     content: (
-      <div className="space-y-4 text-xs sm:text-sm leading-relaxed text-slate-300">
+      <div className="space-y-4 text-sm sm:text-base leading-relaxed text-slate-300">
         <section className="space-y-1.5">
-          <h4 className="font-bold text-blue-400 border-b border-slate-800 pb-1 text-[11px] sm:text-xs uppercase tracking-wider">
+          <h4 className="font-bold text-blue-400 border-b border-slate-800 pb-1 text-xs sm:text-sm uppercase tracking-wider">
             PRIMERO: Objeto y Ámbito de Aplicación
           </h4>
           <p>
@@ -158,7 +158,7 @@ const legalModalData: Record<
         </section>
 
         <section className="space-y-2">
-          <h4 className="font-bold text-blue-400 border-b border-slate-800 pb-1 text-[11px] sm:text-xs uppercase tracking-wider">
+          <h4 className="font-bold text-blue-400 border-b border-slate-800 pb-1 text-xs sm:text-sm uppercase tracking-wider">
             SEGUNDO: Estructura Tarifaria de Boletería y Preventa
           </h4>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
@@ -182,7 +182,7 @@ const legalModalData: Record<
         </section>
 
         <section className="space-y-1.5">
-          <h4 className="font-bold text-blue-400 border-b border-slate-800 pb-1 text-[11px] sm:text-xs uppercase tracking-wider">
+          <h4 className="font-bold text-blue-400 border-b border-slate-800 pb-1 text-xs sm:text-sm uppercase tracking-wider">
             TERCERO: Política de No Reembolso
           </h4>
           <p>
@@ -191,7 +191,7 @@ const legalModalData: Record<
         </section>
 
         <section className="space-y-1.5">
-          <h4 className="font-bold text-blue-400 border-b border-slate-800 pb-1 text-[11px] sm:text-xs uppercase tracking-wider">
+          <h4 className="font-bold text-blue-400 border-b border-slate-800 pb-1 text-xs sm:text-sm uppercase tracking-wider">
             CUARTO: Propiedad Intelectual
           </h4>
           <p>
@@ -359,7 +359,7 @@ export default function SiteFooter() {
           onClick={() => setActiveModalKey(null)}
         >
           <div
-            className="relative flex h-[85vh] sm:h-auto sm:max-h-[85vh] w-full max-w-2xl flex-col overflow-hidden rounded-t-2xl sm:rounded-2xl border border-slate-700 bg-slate-900 text-white shadow-2xl"
+            className="relative flex h-[90vh] sm:h-auto sm:max-h-[85vh] w-full max-w-2xl flex-col overflow-hidden rounded-t-[1.5rem] sm:rounded-2xl border border-slate-700 bg-slate-900 text-white shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header del Modal */}

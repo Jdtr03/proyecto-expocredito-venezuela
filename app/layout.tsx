@@ -49,9 +49,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es" className={inter.className}>
-      <body className="antialiased" suppressHydrationWarning>
-        {children}
+    <html lang="es" className={`${inter.className} overflow-x-hidden`}>
+      <body className="antialiased overflow-x-hidden relative" suppressHydrationWarning>
+        <div className="flex min-h-screen flex-col w-full max-w-[100vw] overflow-x-hidden">
+          {children}
+        </div>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

@@ -28,8 +28,9 @@ interface Sponsor {
 }
 
 function SponsorLogo({ sponsor }: { sponsor: Sponsor }) {
+  const isScaled = sponsor.scale !== "scale-100" && sponsor.scale !== "scale-[0.9]";
   return (
-    <div className="flex h-12 w-28 items-center justify-center sm:w-32 md:h-14 md:w-36">
+    <div className={`flex h-12 items-center justify-center ${isScaled ? 'w-32 sm:w-36 mx-1 sm:mx-2' : 'w-24 sm:w-28'} md:h-14 md:w-36 md:mx-0`}>
       {/* El div interno aplica la escala personalizada fija */}
       <div className={`flex h-full w-full items-center justify-center ${sponsor.scale}`}>
         {/* La imagen aplica el efecto zoom leve (+10%) en hover sin romper la escala base */}
@@ -46,7 +47,7 @@ function SponsorLogo({ sponsor }: { sponsor: Sponsor }) {
 
 export default function SponsorsMarquee() {
   return (
-    <section aria-labelledby="sponsors-heading" className="w-full bg-white py-10 md:py-14">
+    <section aria-labelledby="sponsors-heading" className="w-full bg-white py-10 md:py-14 overflow-hidden">
       <div className="mx-auto max-w-7xl px-4">
         <h2
           id="sponsors-heading"

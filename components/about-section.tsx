@@ -23,7 +23,7 @@ export default function AboutSection() {
             COLUMNA IZQUIERDA: 5 de 12 columnas (~41.6% del ancho)
             Si prefieres 35%, cambia md:col-span-5 por md:col-span-4
           */}
-          <div className="relative overflow-hidden rounded-t-3xl rounded-b-none bg-[#030140] p-0 shadow-lg md:col-span-5">
+          <div className="relative overflow-hidden rounded-3xl md:rounded-t-3xl md:rounded-b-none bg-[#030140] p-0 shadow-lg md:col-span-5">
             <Image
               src="/images/Norelys.png"
               alt="Vocera principal de Expo Créditos Venezuela"
@@ -45,8 +45,8 @@ export default function AboutSection() {
               <span className="text-[#159b48]">Créditos y Financiamientos</span>
             </h2>
 
-            {/* Imagen Tarima centrada y sin bordes redondeados */}
-            <div className="relative my-auto aspect-[16/9] w-full overflow-hidden rounded-none shadow-sm">
+            {/* Imagen Tarima centrada y sin bordes redondeados en desktop */}
+            <div className="relative my-auto aspect-[16/9] w-full overflow-hidden rounded-2xl md:rounded-none shadow-sm">
               <Image
                 src="/images/TARIMA.png"
                 alt="Tarima central de Expo Créditos Venezuela"

@@ -17,7 +17,7 @@ const sponsorPoints = [
 
 function PhoneMockup() {
   return (
-    <div className="mx-auto w-full max-w-[280px] rounded-[2.5rem] border-[6px] border-slate-700 bg-white shadow-2xl">
+    <div className="mx-auto w-full max-w-[240px] sm:max-w-[280px] rounded-[2.5rem] border-[6px] border-slate-700 bg-white shadow-2xl">
       {/* Screen */}
       <div className="relative aspect-[9/19] w-full overflow-hidden rounded-[2rem] bg-slate-900">
         <Image
@@ -80,12 +80,12 @@ export default function AppPromoSection() {
             </div>
 
             {/* Botones de Tiendas */}
-            <div className="mt-6 flex scale-110 items-center justify-center gap-3 lg:justify-end">
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-3 sm:gap-4 lg:justify-end">
               <a
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition-transform active:scale-95 hover:opacity-90"
+                className="transition-transform active:scale-95 hover:opacity-90 hover:scale-105"
               >
                 <Image
                   src="/Ven-expo-app.webp"
@@ -93,7 +93,7 @@ export default function AppPromoSection() {
                   width={135}
                   height={40}
                   style={{ width: "auto", height: "auto" }}
-                  className="h-10 object-contain"
+                  className="h-10 sm:h-12 object-contain"
                 />
               </a>
 
@@ -101,7 +101,7 @@ export default function AppPromoSection() {
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition-transform active:scale-95 hover:opacity-90"
+                className="transition-transform active:scale-95 hover:opacity-90 hover:scale-105"
               >
                 <Image
                   src="/Venexpo-app.webp"
@@ -109,7 +109,7 @@ export default function AppPromoSection() {
                   width={135}
                   height={40}
                   style={{ width: "auto", height: "auto" }}
-                  className="h-10 object-contain"
+                  className="h-10 sm:h-12 object-contain"
                 />
               </a>
             </div>

@@ -41,7 +41,7 @@ const partners = [
 
 export default function PartnersSection() {
   return (
-    <section className="bg-slate-50 py-14 md:py-20">
+    <section className="bg-slate-50 py-14 md:py-20 overflow-hidden">
       <div className="mx-auto max-w-6xl px-4">
         <h2 className="text-balance text-center text-2xl font-extrabold tracking-tight text-slate-900 md:text-4xl">
           Aliados Comerciales
