@@ -3,7 +3,6 @@ import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 
-// Configuración de Inter
 const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
@@ -51,7 +50,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={inter.className}>
-      <body className="antialiased">
+      <body className="antialiased" suppressHydrationWarning>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

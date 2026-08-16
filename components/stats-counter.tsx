@@ -7,14 +7,15 @@ type Stat = {
   icon: typeof Users
   value: number
   prefix: string
+  suffix?: string
   label: string
 }
 
 const stats: Stat[] = [
-  { icon: Users, value: 800, prefix: "+", label: "2025" },
-  { icon: Building2, value: 200, prefix: "+", label: "Empresas participantes – 2025" },
-  { icon: Mic, value: 40, prefix: "+", label: "Keynote speakers" },
-  { icon: Globe, value: 9, prefix: "+", label: "Países asistieron – 2025" },
+  { icon: Users, value: 10, prefix: "+", suffix: "K", label: "Asistentes" },
+  { icon: Building2, value: 180, prefix: "+", label: "Empresas participantes" },
+  { icon: Mic, value: 20, prefix: "+", label: "Oradores" },
+  { icon: Globe, value: 9, prefix: "+", label: "Estados a nivel nacional" },
 ]
 
 function useCountUp(target: number, start: boolean, duration = 1600) {
@@ -51,6 +52,7 @@ function StatCard({ stat, start }: { stat: Stat; start: boolean }) {
       <p className="text-3xl font-extrabold tracking-tight text-white tabular-nums lg:text-4xl">
         {stat.prefix}
         {count}
+        {stat.suffix}
       </p>
       <p className="text-xs font-medium leading-snug text-white/80 text-pretty">
         {stat.label}
@@ -89,14 +91,14 @@ export default function StatsCounter() {
         {/* Layout en 1 fila con 5 columnas en pantallas md/lg */}
         <div className="grid grid-cols-2 gap-4 md:grid-cols-5 md:gap-4 items-center">
 
-          {/* Columna 1: Título "Congreso 2025" */}
+          {/* Columna 1: Título "Congreso 2026-2027" */}
           <div className="col-span-2 md:col-span-1 pr-2">
             <h2
               id="stats-heading"
               className="text-2xl font-extrabold leading-tight tracking-tight text-white sm:text-3xl md:text-3xl lg:text-4xl"
             >
               Congreso <br className="hidden md:block" />
-              2025
+              2026-2027
             </h2>
           </div>
 

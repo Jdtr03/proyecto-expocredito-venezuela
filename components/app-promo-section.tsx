@@ -19,91 +19,17 @@ function PhoneMockup() {
   return (
     <div className="mx-auto w-full max-w-[280px] rounded-[2.5rem] border-[6px] border-slate-700 bg-white shadow-2xl">
       {/* Screen */}
-      <div className="overflow-hidden rounded-[2rem]">
-        {/* Header */}
-        <div className="flex items-center gap-3 border-b border-gray-100 px-4 py-3">
-          <span aria-hidden className="text-lg text-gray-400">
-            {"\u00D7"}
-          </span>
-          <span className="text-sm font-semibold text-gray-900">Último paso</span>
-        </div>
-
-        <div className="space-y-4 px-4 py-4">
-          {/* Payment method */}
-          <div>
-            <p className="mb-2 text-sm font-medium text-gray-700">¿Cómo quieres pagar?</p>
-            <div className="grid grid-cols-2 gap-2">
-              <button
-                type="button"
-                className="rounded-lg bg-slate-800 px-3 py-2 text-left text-xs font-semibold text-white"
-              >
-                Bancos
-                <br />
-                Nacionales
-              </button>
-              <button
-                type="button"
-                className="rounded-lg bg-orange-500 px-3 py-2 text-left text-xs font-semibold text-white"
-              >
-                Agregar
-                <br />
-                Tarjeta
-              </button>
-            </div>
-          </div>
-
-          {/* Billing */}
-          <div>
-            <p className="mb-2 text-xs font-medium text-gray-500">Datos de facturación</p>
-            <div className="flex items-center gap-3 rounded-lg border border-gray-200 p-2">
-              <span className="h-8 w-1.5 rounded-full bg-orange-500" aria-hidden />
-              <div>
-                <p className="text-xs font-semibold text-gray-900">Creando Nortes</p>
-                <p className="text-[10px] text-gray-400">ID J-309296484</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Summary */}
-          <div>
-            <p className="mb-2 text-xs font-medium text-gray-500">Resumen de Compra</p>
-            <div className="space-y-1 text-[11px] text-gray-600">
-              <div className="flex justify-between">
-                <span className="font-semibold text-gray-900">DÍA 2</span>
-                <span />
-              </div>
-              <div className="flex justify-between">
-                <span>General Día 2 Parte</span>
-                <span>$16.00</span>
-              </div>
-              <div className="flex justify-between">
-                <span>Fee (10%)</span>
-                <span>$1.40</span>
-              </div>
-            </div>
-            <div className="mt-2 flex justify-between border-t border-gray-100 pt-2 text-sm font-bold text-gray-900">
-              <span>TOTAL A PAGAR</span>
-              <span>$17.40</span>
-            </div>
-          </div>
-
-          {/* Pay button */}
-          <button
-            type="button"
-            className="w-full rounded-lg bg-slate-900 py-3 text-sm font-semibold text-white"
-          >
-            PAGAR
-          </button>
-        </div>
-
-        {/* Nav bar */}
-        <div className="flex items-center justify-center gap-10 border-t border-gray-100 py-2 text-gray-300">
-          <span className="h-3 w-3 rounded-sm border border-current" aria-hidden />
-          <span className="h-3 w-3 rounded-full border border-current" aria-hidden />
-          <span className="text-xs" aria-hidden>
-            {"\u2039"}
-          </span>
-        </div>
+      <div className="relative aspect-[9/19] w-full overflow-hidden rounded-[2rem] bg-slate-900">
+        <Image
+          src="/images/app.jpeg"
+          alt="Captura de pantalla de la app de la expo"
+          fill
+          sizes="280px"
+          priority
+          className="object-cover object-top"
+        />
+        {/* Dynamic Island / Notch */}
+        <div className="absolute top-2 left-1/2 z-10 h-3 w-16 -translate-x-1/2 rounded-full bg-black/80" />
       </div>
     </div>
   )
@@ -130,8 +56,8 @@ export default function AppPromoSection() {
         {/* Layout de 3 columnas */}
         <div className="grid items-center gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-4">
 
-          {/* Columna Izquierda: App Oficial (Alineada a la derecha y pegada al celular) */}
-          <div className="order-2 flex flex-col items-center text-center md:order-1 md:col-span-2 lg:col-span-1 lg:order-1 lg:items-end lg:pr-6 xl:pr-12 lg:text-right">
+          {/* Columna Izquierda: App Oficial */}
+          <div className="order-2 flex flex-col items-center text-center md:order-1 md:col-span-2 lg:col-span-1 lg:order-1 lg:items-end lg:pr-6 lg:text-right xl:pr-12">
             <div className="lg:max-w-xs">
               <h3 className="text-3xl font-semibold text-white">App oficial</h3>
               <p className="mt-3 text-sm leading-relaxed text-gray-400">
@@ -139,17 +65,63 @@ export default function AppPromoSection() {
               </p>
             </div>
 
-            {/* Logo de Venexpo dentro del contenedor blanco */}
-            <div className="mt-6 inline-flex items-center justify-center rounded-3xl bg-white p-5 shadow-lg">
+            {/* Logo de Venexpo */}
+            <div className="mt-6 inline-flex items-center justify-center rounded-3xl bg-white p-1.5 shadow-lg">
               <div className="flex items-center justify-center">
                 <Image
                   src="/images/logos/web-expo.webp"
                   alt="Logo Venexpo oficial"
                   width={140}
                   height={60}
-                  className="h-12 w-auto object-contain"
+                  style={{ width: "auto", height: "auto" }}
+                  className="h-12 object-contain"
                 />
               </div>
+            </div>
+
+            {/* Botones de Tiendas */}
+            <div className="mt-6 flex scale-110 items-center justify-center gap-3 lg:justify-end">
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-transform active:scale-95 hover:opacity-90"
+              >
+                <Image
+                  src="/Ven-expo-app.webp"
+                  alt="Descargar en App Store"
+                  width={135}
+                  height={40}
+                  style={{ width: "auto", height: "auto" }}
+                  className="h-10 object-contain"
+                />
+              </a>
+
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-transform active:scale-95 hover:opacity-90"
+              >
+                <Image
+                  src="/Venexpo-app.webp"
+                  alt="Disponible en Google Play"
+                  width={135}
+                  height={40}
+                  style={{ width: "auto", height: "auto" }}
+                  className="h-10 object-contain"
+                />
+              </a>
+            </div>
+
+            {/* Cuadro de aviso para adquirir entradas */}
+            <div className="mt-8 w-full max-w-xs rounded-2xl border border-white/10 bg-slate-800/60 p-4 text-center shadow-lg backdrop-blur-sm lg:text-right">
+              <h4 className="text-lg font-bold text-white">
+                Adquiere tus entradas en Venexpo
+              </h4>
+              <p className="mt-1 text-xs text-gray-300">
+                Descarga la app para poder adquirir tus entradas
+              </p>
             </div>
           </div>
 

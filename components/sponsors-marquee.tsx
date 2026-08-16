@@ -5,19 +5,19 @@ const ROW_1 = [
   { name: "BDV", logo: "/images/logos/bdv.png", scale: "scale-100" },
   { name: "Banesco", logo: "/images/logos/banesco.png", scale: "scale-100" },
   { name: "Banco del Tesoro", logo: "/images/logos/banco-tesoro.png", scale: "scale-100" },
-  { name: "Banco Plaza", logo: "/images/logos/banco-plaza.jpg", scale: "scale-140" }, // +25% por ser fino
-  { name: "Bancamiga", logo: "/images/logos/bancamiga.webp", scale: "scale-120" },
+  { name: "Banco Plaza", logo: "/images/logos/banco-plaza.jpg", scale: "scale-[1.6]" },
+  { name: "Bancamiga", logo: "/images/logos/bancamiga.jpg", scale: "scale-[1.6]" },
   { name: "BNC", logo: "/images/logos/bnc.png", scale: "scale-100" },
   { name: "Damasco", logo: "/images/logos/damasco.svg", scale: "scale-100" },
 ]
 
 // Fila 2: 6 Marcas Comerciales
 const ROW_2 = [
-  { name: "Venelectronics", logo: "/images/logos/venelectronics.png", scale: "scale-90" },
-  { name: "IVOO", logo: "/images/logos/ivoo.svg", scale: "scale-90" },
-  { name: "SoyTechno", logo: "/images/logos/soy-techno.webp", scale: "scale-150" }, // +50% porque la imagen es diminuta
+  { name: "Venelectronics", logo: "/images/logos/venelectronics.png", scale: "scale-[1.1]" },
+  { name: "IVOO", logo: "/images/logos/ivoo.svg", scale: "scale-[0.9]" },
+  { name: "SoyTechno", logo: "/images/logos/soy-techno.webp", scale: "scale-[2.6]" },
   { name: "MultiMax", logo: "/images/logos/multimax.png", scale: "scale-100" },
-  { name: "Toyota", logo: "/images/logos/toyota.svg", scale: "scale-110" },
+  { name: "Toyota", logo: "/images/logos/toyota.svg", scale: "scale-[1.1]" },
   { name: "Kia", logo: "/images/logos/kia.webp", scale: "scale-100" },
 ]
 
@@ -30,12 +30,16 @@ interface Sponsor {
 function SponsorLogo({ sponsor }: { sponsor: Sponsor }) {
   return (
     <div className="flex h-12 w-28 items-center justify-center sm:w-32 md:h-14 md:w-36">
-      <img
-        src={sponsor.logo}
-        alt={`Logo ${sponsor.name}`}
-        className={`max-h-full max-w-full object-contain transition-transform duration-300 hover:scale-110 ${sponsor.scale}`}
-        loading="lazy"
-      />
+      {/* El div interno aplica la escala personalizada fija */}
+      <div className={`flex h-full w-full items-center justify-center ${sponsor.scale}`}>
+        {/* La imagen aplica el efecto zoom leve (+10%) en hover sin romper la escala base */}
+        <img
+          src={sponsor.logo}
+          alt={`Logo ${sponsor.name}`}
+          className="max-h-full max-w-full object-contain transition-transform duration-300 hover:scale-110"
+          loading="lazy"
+        />
+      </div>
     </div>
   )
 }
@@ -51,9 +55,7 @@ export default function SponsorsMarquee() {
           Bancos y Marcas Invitadas
         </h2>
 
-        {/* Estructura fija de 2 Filas */}
         <div className="flex flex-col gap-8 md:gap-10">
-
           {/* PRIMERA FILA (7 Logos) */}
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8">
             {ROW_1.map((sponsor) => (
@@ -67,7 +69,6 @@ export default function SponsorsMarquee() {
               <SponsorLogo key={sponsor.name} sponsor={sponsor} />
             ))}
           </div>
-
         </div>
       </div>
     </section>

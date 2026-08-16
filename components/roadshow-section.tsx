@@ -4,18 +4,19 @@ export default function RoadshowSection() {
   return (
     <section className="w-full bg-white">
       {/* Título superior centrado, más grande y con logo */}
-      <div className="mx-auto flex max-w-7xl items-center justify-center gap-4 px-4 py-8 sm:px-6 lg:px-8">
+      <div className="mx-auto flex max-w-7xl items-center justify-center gap-4 px-4 py-12 sm:px-6 md:py-16 lg:px-8">
         <div className="relative h-14 w-14 shrink-0 sm:h-16 sm:w-16 md:h-20 md:w-20">
           <Image
-            src="/images/pin1.svg" // Cambia esta ruta por la de tu logo
+            src="/images/pin1.svg"
             alt="Logo La Ruta del Crédito"
             fill
+            sizes="(max-width: 640px) 56px, (max-width: 768px) 64px, 80px"
             className="object-contain"
             priority
           />
         </div>
 
-        <h2 className="text-center text-2xl font-black tracking-tight text-gray-950 sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl 2xl:text-6xl">
+        <h2 className="text-balance text-3xl font-extrabold tracking-tight text-blue-950 md:text-4xl">
           La Ruta del Crédito Venezuela 2026
         </h2>
       </div>

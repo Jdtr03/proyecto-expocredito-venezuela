@@ -5,7 +5,7 @@ import Image from "next/image"
 import { X } from "lucide-react"
 
 // Carga las 11 láminas de la carpeta /public/images/presentacion/
-const PRESENTATION_IMAGES = Array.from({ length: 11 }, (_, i) => ({
+const PRESENTATION_IMAGES = Array.from({ length: 13 }, (_, i) => ({
   id: i + 1,
   src: `/images/presentacion/${i + 1}-img.png`,
   alt: `Lámina de presentación ${i + 1} - Expo Créditos Venezuela`,

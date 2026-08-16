@@ -25,7 +25,7 @@ export default function AboutSection() {
           */}
           <div className="relative overflow-hidden rounded-t-3xl rounded-b-none bg-[#030140] p-0 shadow-lg md:col-span-5">
             <Image
-              src="/images/about-portrait.png"
+              src="/images/Norelys.png"
               alt="Vocera principal de Expo Créditos Venezuela"
               width={520}
               height={560}
@@ -48,7 +48,7 @@ export default function AboutSection() {
             {/* Imagen Tarima centrada y sin bordes redondeados */}
             <div className="relative my-auto aspect-[16/9] w-full overflow-hidden rounded-none shadow-sm">
               <Image
-                src="/images/about-expo-hall.png"
+                src="/images/TARIMA.png"
                 alt="Tarima central de Expo Créditos Venezuela"
                 fill
                 className="object-cover"
