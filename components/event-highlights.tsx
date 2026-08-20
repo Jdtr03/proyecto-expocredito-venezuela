@@ -1,11 +1,11 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import Image from "next/image"
 import { X } from "lucide-react"
+import { motion, useMotionValue, animate } from "framer-motion"
 
-// Carga las 11 láminas de la carpeta /public/images/presentacion/
-const PRESENTATION_IMAGES = Array.from({ length: 13 }, (_, i) => ({
+const PRESENTATION_IMAGES = Array.from({ length: 14 }, (_, i) => ({
   id: i + 1,
   src: `/images/presentacion/${i + 1}-img.png`,
   alt: `Lámina de presentación ${i + 1} - Expo Créditos Venezuela`,
@@ -15,6 +15,59 @@ type PresentationImage = (typeof PRESENTATION_IMAGES)[number]
 
 export default function EventHighlights() {
   const [selectedImage, setSelectedImage] = useState<PresentationImage | null>(null)
+  const [isDragging, setIsDragging] = useState(false)
+
+  // Duplicamos el array para lograr el bucle infinito sin saltos
+  const duplicatedImages = [...PRESENTATION_IMAGES, ...PRESENTATION_IMAGES]
+
+  const xTranslation = useMotionValue(0)
+  const containerRef = useRef<HTMLDivElement>(null)
+  const [contentWidth, setContentWidth] = useState(0)
+
+  // Calcula el ancho real de la mitad del contenido (un set completo de imágenes)
+  useEffect(() => {
+    if (containerRef.current) {
+      const totalWidth = containerRef.current.scrollWidth
+      setContentWidth(totalWidth / 2)
+    }
+  }, [])
+
+  // Controla la animación continua de desplazamiento
+  useEffect(() => {
+    if (contentWidth === 0) return
+
+    let controls: ReturnType<typeof animate>
+
+    const finalPosition = -contentWidth
+
+    // Si el usuario no está arrastrando, inicia el movimiento automático
+    if (!isDragging) {
+      controls = animate(xTranslation, [xTranslation.get(), finalPosition], {
+        ease: "linear",
+        duration: 35 * (1 - Math.abs(xTranslation.get()) / contentWidth), // Mantiene velocidad constante
+        repeat: Infinity,
+        repeatType: "loop",
+        repeatDelay: 0,
+        onUpdate: (latest) => {
+          // Bucle infinito: si sobrepasa la mitad, reinicia la posición suavemente
+          if (latest <= -contentWidth) {
+            xTranslation.set(0)
+          } else if (latest > 0) {
+            xTranslation.set(-contentWidth)
+          }
+        },
+      })
+    }
+
+    return () => controls?.stop()
+  }, [contentWidth, isDragging, xTranslation])
+
+  // Abre el modal solo si el usuario hizo clic y no un gesto de arrastre
+  const handleCardClick = (item: PresentationImage) => {
+    if (!isDragging) {
+      setSelectedImage(item)
+    }
+  }
 
   return (
     <section className="overflow-hidden bg-gray-50 py-10 md:py-14 lg:py-16">
@@ -31,44 +84,44 @@ export default function EventHighlights() {
         </header>
       </div>
 
-      {/* CARRUSEL DE ANCHO COMPLETO */}
-      <div className="group relative w-full overflow-hidden py-4">
-        {/* Track animado continuo de derecha a izquierda */}
-        <div className="flex w-max animate-marquee gap-6 group-hover:[animation-play-state:paused]">
-          {[...PRESENTATION_IMAGES, ...PRESENTATION_IMAGES].map((item, index) => (
-            <button
+      {/* CARRUSEL DE ANCHO COMPLETO CON DRAG Y BUCLE AUTOMÁTICO */}
+      <div className="relative w-full overflow-hidden py-4 cursor-grab active:cursor-grabbing">
+        <motion.div
+          ref={containerRef}
+          style={{ x: xTranslation }}
+          drag="x"
+          dragConstraints={{
+            left: -contentWidth,
+            right: 0,
+          }}
+          onDragStart={() => setIsDragging(true)}
+          onDragEnd={() => setIsDragging(false)}
+          className="flex w-max gap-6"
+        >
+          {duplicatedImages.map((item, index) => (
+            <div
               key={`${item.id}-${index}`}
-              onClick={() => setSelectedImage(item)}
-              type="button"
-              /* 
-                🔑 CAMBIOS CLAVE AQUÍ:
-                - h-auto: La altura la define la proporción.
-                - w-[280px] sm:w-[320px] md:w-[360px]: Anchos fijos responsivos.
-                - aspect-[3/4]: Define una proporción rectangular alta (tipo póster).
-                - overflow-hidden + rounded-3xl: Asegura que la imagen siga la forma redondeada.
-                - Sin bg-slate-900: Eliminamos el fondo para que no haya bordes de otro color.
-              */
-              className="group/card relative h-auto w-[240px] shrink-0 overflow-hidden rounded-3xl shadow-lg transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-blue-500/50 sm:w-[280px] md:w-[360px] aspect-[3/4]"
+              onClick={() => handleCardClick(item)}
+              className="group/card relative h-auto w-[240px] shrink-0 overflow-hidden rounded-3xl shadow-lg transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl sm:w-[280px] md:w-[360px] aspect-[3/4] select-none"
             >
               <Image
                 src={item.src}
                 alt={item.alt}
                 fill
                 sizes="(max-width: 640px) 240px, (max-width: 768px) 280px, 360px"
-                /* 🔑 Volvemos a object-cover para que llene la tarjeta perfectamente */
-                className="object-cover transition-transform duration-500 group-hover/card:scale-105"
-                priority={index < 4} // Prioridad de carga para las primeras imágenes
+                className="object-cover transition-transform duration-500 group-hover/card:scale-105 pointer-events-none"
+                priority={index < 4}
               />
 
-              {/* Overlay en Hover (con ligero desenfoque) */}
+              {/* Overlay en Hover */}
               <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 backdrop-blur-[2px] transition-opacity duration-300 group-hover/card:opacity-100">
                 <span className="rounded-full bg-white/90 px-5 py-2.5 text-xs font-bold text-gray-900 shadow-md">
                   Ver Detalles
                 </span>
               </div>
-            </button>
+            </div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       {/* Botón CTA Inferior */}
@@ -103,7 +156,7 @@ export default function EventHighlights() {
               <X className="h-7 w-7" />
             </button>
 
-            {/* Contenedor de la Imagen Modal (más grande) */}
+            {/* Contenedor de la Imagen Modal */}
             <div className="relative h-[85vh] w-[90vw] max-w-6xl">
               <Image
                 src={selectedImage.src}

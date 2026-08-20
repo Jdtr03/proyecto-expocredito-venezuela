@@ -8,7 +8,7 @@ export default function FloorPlanSection() {
 
         {/* Contenedor de la Imagen: Ahora es el elemento central */}
         {/* Le damos un ancho máximo responsivo, un borde verde esmeralda y sombra */}
-        <div className="w-full max-w-6xl overflow-hidden rounded-2xl border-4 border-emerald-500 shadow-2xl bg-white/5 p-1">
+        <div className="w-full max-w-6xl overflow-hidden rounded-2xl border-4 border-[#008135] shadow-2xl bg-white/5 p-1">
           <Image
             // 🔑 RUTA EXACTA según tu captura: /public/images/plano.png
             src="/images/plano.png"
