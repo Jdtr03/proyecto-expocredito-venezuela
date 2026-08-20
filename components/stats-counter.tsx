@@ -83,8 +83,9 @@ export default function StatsCounter() {
 
   return (
     <section
+      id="congreso"
       ref={sectionRef}
-      className="relative w-full border-t-4 border-[#16a34a] bg-gradient-to-br from-[#0f52ba] via-[#3b2beb] to-[#0a18a8] py-8 md:py-10"
+      className="scroll-mt-24 sm:scroll-mt-28 relative w-full border-t-4 border-[#16a34a] bg-gradient-to-br from-[#0f52ba] via-[#3b2beb] to-[#0a18a8] py-8 md:py-10"
       aria-labelledby="stats-heading"
     >
       <div className="mx-auto max-w-7xl px-4 md:px-8">

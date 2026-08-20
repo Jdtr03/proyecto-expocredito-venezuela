@@ -130,8 +130,9 @@ Deseo recibir el dossier comercial.`
 
   return (
     <section
+      id="sponsor"
       aria-labelledby="sponsor-heading"
-      className="laptop-fit relative flex min-h-[50vh] w-full flex-col items-center justify-center overflow-hidden bg-gradient-to-r from-[#008135] via-blue-900 to-[#008135] py-6 sm:min-h-[60vh] sm:py-8 md:py-10 lg:py-12"
+      className="scroll-mt-24 sm:scroll-mt-28 laptop-fit relative flex min-h-[50vh] w-full flex-col items-center justify-center overflow-hidden bg-gradient-to-r from-[#008135] via-blue-900 to-[#008135] py-6 sm:min-h-[60vh] sm:py-8 md:py-10 lg:py-12"
     >
       {/* Encabezado */}
       <header className="mx-auto mb-3 max-w-4xl space-y-1 px-4 text-center sm:mb-5">

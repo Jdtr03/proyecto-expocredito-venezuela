@@ -49,7 +49,7 @@ const heroSlides: HeroSlide[] = [
     highlightText: "Más esperada de Venezuela",
     footerText: "Ruta del Crédito 2026 - Expo Créditos Venezuela 2026-2027",
     primaryCta: { label: "Adquiere tus entradas", href: "#entradas" },
-    secondaryCta: { label: "Ser Expositor", href: "#expositor" },
+    secondaryCta: { label: "Ser Expositor", href: "#sponsor" },
     image: {
       src: "/images/expo-creditos-hero.png",
       alt: "Expo Créditos Venezuela 2026 - Banner 1",
@@ -73,7 +73,7 @@ const heroSlides: HeroSlide[] = [
     highlightText: "Conoce la ruta exacta para obtener créditos de emprendimiento",
     badgeText: "Presencial",
     dateLocationText: <>Caracas, Sábado 29 de Agosto, 2026 <br /> inicio 10:00 AM en Minds Co-work, piso 4 Centro Galipan el rosal</>,
-    primaryCta: { label: "Reserva tu participación", href: "#reserva" },
+    primaryCta: { label: "Reserva tu participación", href: "#entradas" },
     image: {
       src: "/images/1er-seminario.png",
       alt: "Seminario Créditos para Emprendedores",
@@ -98,7 +98,7 @@ const heroSlides: HeroSlide[] = [
     highlightText: "Conoce la ruta exacta para obtener créditos de emprendimiento",
     badgeText: "Presencial",
     dateLocationText: <>Caracas, Sábado 29 de Agosto, 2026 <br /> inicio 10:00 AM en Minds Co-work, piso 4 Centro Galipan el rosal</>,
-    primaryCta: { label: "Reserva tu participación", href: "#reserva" },
+    primaryCta: { label: "Reserva tu participación", href: "#entradas" },
     image: {
       src: "/images/banner-2.jpg",
       alt: "Seminario Créditos para Emprendedores",
@@ -148,7 +148,7 @@ export default function HeroSection() {
   }, [emblaApi, onSelect]);
 
   return (
-    <section className="relative overflow-hidden bg-[url('/images/b-a.png')] bg-cover bg-center pt-4 sm:pt-6 xl:pt-8 pb-0">
+    <section id="inicio" className="relative overflow-hidden bg-[url('/images/b-a.png')] bg-cover bg-center pt-4 sm:pt-6 xl:pt-8 pb-0">
       <div className="relative mx-auto flex w-full max-w-5xl xl:max-w-7xl flex-col px-4 sm:px-6 lg:px-8">
 
         {/* Carousel Container */}

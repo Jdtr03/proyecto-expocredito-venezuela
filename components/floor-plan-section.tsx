@@ -21,7 +21,7 @@ export default function FloorPlanSection() {
         {/* Pie de página de la sección (el texto de cierre original) */}
         <div className="mt-6 text-center md:mt-8">
           <a
-            href="#contacto"
+            href="#sponsor"
             className="inline-block rounded-full bg-red-600 px-8 py-3 text-xs font-semibold text-white shadow-lg transition-colors hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 sm:px-10 sm:py-3.5 sm:text-sm"
           >
             Reservar mi Stand

@@ -8,13 +8,13 @@ const NAV_LINKS = [
   { label: "Congreso", href: "#congreso" },
   { label: "Medios", href: "#medios" },
   { label: "Ruta del Crédito", href: "#ruta-del-credito" },
-  { label: "Contacto", href: "#contacto" },
+  { label: "Contacto", href: "#sponsor" },
 ]
 
 const CTA_BUTTONS = [
-  { label: "Entradas Pre-venta", className: "bg-red-600 hover:bg-red-700" },
-  { label: "Ser Expositor", className: "bg-green-600 hover:bg-green-700" },
-  { label: "Ser Speaker", className: "bg-blue-800 hover:bg-blue-900" },
+  { label: "Entradas Pre-venta", href: "#entradas", className: "bg-red-600 hover:bg-red-700" },
+  { label: "Ser Expositor", href: "#sponsor", className: "bg-green-600 hover:bg-green-700" },
+  { label: "Ser Speaker", href: "#sponsor", className: "bg-blue-800 hover:bg-blue-900" },
 ]
 
 export function Logo() {
@@ -69,13 +69,13 @@ export default function SiteNavbar() {
             {/* Desktop CTA buttons */}
             <div className="hidden items-center gap-1.5 lg:flex xl:gap-2">
               {CTA_BUTTONS.map((btn) => (
-                <button
+                <a
                   key={btn.label}
-                  type="button"
-                  className={`rounded-full px-2.5 py-1.5 text-[11px] font-semibold text-white transition-colors xl:px-3 xl:text-xs ${btn.className}`}
+                  href={btn.href}
+                  className={`inline-flex items-center justify-center rounded-full px-2.5 py-1.5 text-[11px] font-semibold text-white transition-colors xl:px-3 xl:text-xs ${btn.className}`}
                 >
                   {btn.label}
-                </button>
+                </a>
               ))}
             </div>
 
@@ -111,13 +111,14 @@ export default function SiteNavbar() {
 
               <div className="mt-4 flex flex-col gap-2">
                 {CTA_BUTTONS.map((btn) => (
-                  <button
+                  <a
                     key={btn.label}
-                    type="button"
-                    className={`w-full rounded-full px-4 py-2.5 text-sm font-semibold text-white transition-colors ${btn.className}`}
+                    href={btn.href}
+                    onClick={() => setOpen(false)}
+                    className={`inline-flex items-center justify-center w-full rounded-full px-4 py-2.5 text-sm font-semibold text-white transition-colors ${btn.className}`}
                   >
                     {btn.label}
-                  </button>
+                  </a>
                 ))}
               </div>
             </div>

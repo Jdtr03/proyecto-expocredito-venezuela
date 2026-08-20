@@ -12,7 +12,7 @@ const activities = [
 
 export default function AboutSection() {
   return (
-    <section className="laptop-fit relative overflow-hidden bg-white pt-5 sm:pt-6 md:pt-8 lg:pt-10">
+    <section id="la-expo" className="scroll-mt-24 sm:scroll-mt-28 laptop-fit relative overflow-hidden bg-white pt-5 sm:pt-6 md:pt-8 lg:pt-10">
       {/* Contenedor principal */}
       <div className="mx-auto max-w-5xl lg:max-w-6xl px-4">
 

@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export default function RoadshowSection() {
   return (
-    <section className="w-full bg-white">
+    <section id="ruta-del-credito" className="scroll-mt-24 sm:scroll-mt-28 w-full bg-white">
       {/* Título superior centrado, más grande y con logo */}
       <div className="mx-auto flex max-w-7xl items-center justify-center gap-4 px-4 py-12 sm:px-6 md:py-16 lg:px-8">
         <div className="relative h-14 w-14 shrink-0 sm:h-16 sm:w-16 md:h-20 md:w-20">
@@ -45,7 +45,7 @@ export default function RoadshowSection() {
             </div>
 
             <a
-              href="#registro"
+              href="#entradas"
               className="mt-8 inline-flex items-center justify-center rounded-full bg-red-600 px-8 py-3 text-sm font-semibold text-white shadow-lg transition-colors hover:bg-red-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 focus-visible:ring-offset-blue-950"
             >
               Entrada Libre / Regístrate
@@ -67,7 +67,7 @@ export default function RoadshowSection() {
           {/* Columna derecha */}
           <div className="order-1 md:order-2">
             <p className="mb-4 text-right text-lg font-bold text-white sm:text-xl lg:text-2xl">
-              Sábado 15 de Agosto 2026
+              Sábado 29 de Agosto 2026
             </p>
 
             <div className="relative ml-auto h-56 w-full max-w-md overflow-hidden rounded-lg shadow-2xl ring-1 ring-white/10 sm:h-64 lg:h-72">

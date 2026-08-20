@@ -70,7 +70,7 @@ export default function EventHighlights() {
   }
 
   return (
-    <section className="laptop-fit overflow-hidden bg-gray-50 py-8 sm:py-10 md:py-12 lg:py-14">
+    <section id="medios" className="scroll-mt-24 sm:scroll-mt-28 laptop-fit overflow-hidden bg-gray-50 py-8 sm:py-10 md:py-12 lg:py-14">
       <div className="mx-auto max-w-7xl px-4">
         {/* Encabezado Principal */}
         <header className="mx-auto mb-6 max-w-2xl text-center md:mb-8">
@@ -127,12 +127,12 @@ export default function EventHighlights() {
       {/* Botón CTA Inferior */}
       <div className="mx-auto max-w-7xl px-4">
         <div className="mt-8 flex justify-center md:mt-12">
-          <button
-            type="button"
-            className="rounded-full bg-red-600 px-8 py-3 text-xs font-bold text-white shadow-lg transition-colors hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 sm:px-10 sm:py-3.5 sm:text-sm"
+          <a
+            href="#sponsor"
+            className="inline-flex items-center justify-center rounded-full bg-red-600 px-8 py-3 text-xs font-bold text-white shadow-lg transition-colors hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 sm:px-10 sm:py-3.5 sm:text-sm"
           >
             Ser Sponsor de Expo Créditos VE
-          </button>
+          </a>
         </div>
       </div>
 
