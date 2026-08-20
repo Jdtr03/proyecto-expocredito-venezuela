@@ -6,14 +6,25 @@ import Image from "next/image"
 // Íconos generales desde lucide-react
 import { ChevronUp, X, ShieldCheck, FileText, Scale } from "lucide-react"
 
-// Íconos de redes sociales desde react-icons
-import { FaInstagram, FaFacebook, FaWhatsapp, FaTiktok } from "react-icons/fa6"
+// Íconos de redes sociales desde react-icons/fa
+import { FaWhatsapp, FaInstagram, FaTiktok } from "react-icons/fa"
 
 const socialLinks = [
-  { label: "WhatsApp", href: "https://wa.me/#", Icon: FaWhatsapp },
-  { label: "Instagram", href: "https://instagram.com/#", Icon: FaInstagram },
-  { label: "Facebook", href: "https://facebook.com/#", Icon: FaFacebook },
-  { label: "TikTok", href: "https://tiktok.com/#", Icon: FaTiktok },
+  {
+    label: "WhatsApp",
+    href: "https://wa.me/584242316420",
+    Icon: FaWhatsapp,
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/expocreditosvenezuela?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    Icon: FaInstagram,
+  },
+  {
+    label: "TikTok",
+    href: "https://www.tiktok.com/@expocreditosvenezuela?_r=1&_t=ZS-993DHoat6nK",
+    Icon: FaTiktok,
+  },
 ]
 
 const bottomLinks = [
@@ -62,7 +73,7 @@ const legalModalData: Record<
             TERCERO: Finalidad Limitada del Tratamiento
           </h4>
           <p>
-            La recopilación de información responde estrictamente al Principio de Limitación de la Finalidad. Los datos serán utilizados únicamente para:
+            La recopilación de información responde strictly al Principio de Limitación de la Finalidad. Los datos serán utilizados únicamente para:
           </p>
           <ul className="list-disc pl-4 sm:pl-5 space-y-1 text-slate-300 marker:text-[#008135]">
             <li>Gestionar la lista de acceso anticipado a la plataforma Venexpo App.</li>
@@ -132,7 +143,7 @@ const legalModalData: Record<
             TERCERO: Autonomía de las Entidades Participantes
           </h4>
           <p>
-            Cada institución bancaria, comercial o fintech opera de forma strictly autónoma bajo sus propios manuales de cumplimiento y normativas de los órganos reguladores del Estado venezolano (SUDEBAN, Sudeaseg, entre otros). La consecución de un crédito depende exclusivamente de la capacidad de pago del usuario y de las exigencias internas de la institución financiera elegida.
+            Cada institución bancaria, comercial o fintech opera de forma autónoma bajo sus propios manuales de cumplimiento y normativas de los órganos reguladores del Estado venezolano (SUDEBAN, Sudeaseg, entre otros). La consecución de un crédito depende exclusivamente de la capacidad de pago del usuario y de las exigencias internas de la institución financiera elegida.
           </p>
         </section>
 
