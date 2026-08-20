@@ -4,6 +4,7 @@ import { ReactNode, useCallback, useEffect, useState } from 'react';
 import Image from 'next/image';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
+import { X } from 'lucide-react';
 
 const marqueeItems = [
   "Entradas 20% Desc. en VENEXPO APP",
@@ -20,12 +21,11 @@ interface HeroSlide {
   badgeText?: string;
   dateLocationText?: ReactNode;
   footerText?: string;
-  primaryCta: { label: string; href: string };
+  primaryCta: { label: string; href?: string; isModal?: boolean };
   secondaryCta?: { label: string; href: string };
   image: {
     src: string;
     alt: string;
-    // Opciones para ajustar la vista por cada imagen
     objectFit?: 'cover' | 'contain';
     objectPosition?: string;
     padding?: string;
@@ -48,7 +48,7 @@ const heroSlides: HeroSlide[] = [
     title: <>Expo Créditos <br className="hidden sm:inline" /> Venezuela <br className="hidden sm:inline" />Únete a la Expo</>,
     highlightText: "Más esperada de Venezuela",
     footerText: "Ruta del Crédito 2026 - Expo Créditos Venezuela 2026-2027",
-    primaryCta: { label: "Adquiere tus entradas", href: "#entradas" },
+    primaryCta: { label: "Adquiere tus entradas", href: "#app" },
     secondaryCta: { label: "Ser Expositor", href: "#sponsor" },
     image: {
       src: "/images/expo-creditos-hero.png",
@@ -73,11 +73,10 @@ const heroSlides: HeroSlide[] = [
     highlightText: "Conoce la ruta exacta para obtener créditos de emprendimiento",
     badgeText: "Presencial",
     dateLocationText: <>Caracas, Sábado 29 de Agosto, 2026 <br /> inicio 10:00 AM en Minds Co-work, piso 4 Centro Galipan el rosal</>,
-    primaryCta: { label: "Reserva tu participación", href: "#entradas" },
+    primaryCta: { label: "Reserva tu participación", isModal: true },
     image: {
       src: "/images/1er-seminario.png",
       alt: "Seminario Créditos para Emprendedores",
-      // Ajuste para visualizar afiche/volante completo sin recortar
       objectFit: "contain",
       objectPosition: "center",
       padding: "p-3 sm:p-5",
@@ -87,7 +86,7 @@ const heroSlides: HeroSlide[] = [
       leftColumnBg: "bg-gradient-to-r from-[#170072] via-[#4d0092] to-[#8000b2]",
       taglineColor: "text-white font-extrabold tracking-wider",
       highlightColor: "text-white font-normal non-italic",
-      primaryBtn: "bg-[#ff2038] hover:bg-[#d91227] text-white font-medium rounded-full shadow-md px-6 xl:px-7 min-h-[44px] xl:min-h-[48px] inline-flex items-center justify-center text-xs xl:text-sm transition-transform active:scale-95",
+      primaryBtn: "bg-[#ff2038] hover:bg-[#d91227] text-white font-medium rounded-full shadow-md px-6 xl:px-7 min-h-[44px] xl:min-h-[48px] inline-flex items-center justify-center text-xs xl:text-sm transition-transform active:scale-95 cursor-pointer",
       overlayGradient: "from-[#8000b2] via-[#8000b2]/1 to-transparent"
     },
   },
@@ -98,7 +97,7 @@ const heroSlides: HeroSlide[] = [
     highlightText: "Conoce la ruta exacta para obtener créditos de emprendimiento",
     badgeText: "Presencial",
     dateLocationText: <>Caracas, Sábado 29 de Agosto, 2026 <br /> inicio 10:00 AM en Minds Co-work, piso 4 Centro Galipan el rosal</>,
-    primaryCta: { label: "Reserva tu participación", href: "#entradas" },
+    primaryCta: { label: "Reserva tu participación", isModal: true },
     image: {
       src: "/images/banner-2.jpg",
       alt: "Seminario Créditos para Emprendedores",
@@ -110,7 +109,7 @@ const heroSlides: HeroSlide[] = [
       leftColumnBg: "bg-gradient-to-r from-[#170072] via-[#4d0092] to-[#8000b2]",
       taglineColor: "text-white font-extrabold tracking-wider",
       highlightColor: "text-white font-normal non-italic",
-      primaryBtn: "bg-[#ff2038] hover:bg-[#d91227] text-white font-medium rounded-full shadow-md px-6 xl:px-7 min-h-[44px] xl:min-h-[48px] inline-flex items-center justify-center text-xs xl:text-sm transition-transform active:scale-95",
+      primaryBtn: "bg-[#ff2038] hover:bg-[#d91227] text-white font-medium rounded-full shadow-md px-6 xl:px-7 min-h-[44px] xl:min-h-[48px] inline-flex items-center justify-center text-xs xl:text-sm transition-transform active:scale-95 cursor-pointer",
       overlayGradient: "from-[#8000b2] via-[#8000b2]/50 to-transparent",
     },
   },
@@ -118,6 +117,27 @@ const heroSlides: HeroSlide[] = [
 
 export default function HeroSection() {
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [isReserveModalOpen, setIsReserveModalOpen] = useState(false);
+
+  // Formulario para Reserva de Cupos
+  const [reserveFormData, setReserveFormData] = useState({
+    nombre: "",
+    apellido: "",
+    telefono: "",
+    correo: "",
+  });
+
+  // Evita el scroll del body cuando el modal está abierto
+  useEffect(() => {
+    if (isReserveModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isReserveModalOpen]);
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: true, duration: 25 },
@@ -147,6 +167,42 @@ export default function HeroSection() {
     emblaApi.on('reInit', onSelect);
   }, [emblaApi, onSelect]);
 
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setReserveFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleReserveSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const { nombre, apellido, telefono, correo } = reserveFormData;
+
+    // Mensaje para WhatsApp
+    const message =
+      `Hola, estoy interesado en la reserva de cupos para el 1er seminario. 
+
+*Mis datos:*
+👤 *Nombre:* ${nombre} ${apellido}
+📱 *Teléfono:* ${telefono}
+✉️ *Correo:* ${correo}
+
+¡Quedo atento a la información de pago y registro!`;
+
+    const whatsappNumber = "584226464926";
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappUrl, "_blank");
+
+    // Reiniciar formulario y cerrar modal
+    setReserveFormData({
+      nombre: "",
+      apellido: "",
+      telefono: "",
+      correo: "",
+    });
+    setIsReserveModalOpen(false);
+  };
+
   return (
     <section id="inicio" className="relative overflow-hidden bg-[url('/images/b-a.png')] bg-cover bg-center pt-4 sm:pt-6 xl:pt-8 pb-0">
       <div className="relative mx-auto flex w-full max-w-5xl xl:max-w-7xl flex-col px-4 sm:px-6 lg:px-8">
@@ -157,7 +213,6 @@ export default function HeroSection() {
             {heroSlides.map((slide, slideIndex) => {
               const { styles, image } = slide;
               const isActiveSlide = slideIndex === selectedIndex;
-              const isContain = image.objectFit === 'contain';
 
               return (
                 <div key={slide.id} className="flex-[0_0_100%] min-w-0 pr-0">
@@ -176,9 +231,20 @@ export default function HeroSection() {
                         </h1>
 
                         <div className="mt-4 xl:mt-6 flex flex-col flex-wrap gap-3 sm:flex-row sm:items-center sm:gap-4">
-                          <a href={slide.primaryCta.href} className={`transition ${styles.primaryBtn}`}>
-                            {slide.primaryCta.label}
-                          </a>
+                          {slide.primaryCta.isModal ? (
+                            <button
+                              type="button"
+                              onClick={() => setIsReserveModalOpen(true)}
+                              className={`transition ${styles.primaryBtn}`}
+                            >
+                              {slide.primaryCta.label}
+                            </button>
+                          ) : (
+                            <a href={slide.primaryCta.href} className={`transition ${styles.primaryBtn}`}>
+                              {slide.primaryCta.label}
+                            </a>
+                          )}
+
                           {slide.secondaryCta && styles.secondaryBtn && (
                             <a href={slide.secondaryCta.href} className={`transition ${styles.secondaryBtn}`}>
                               {slide.secondaryCta.label}
@@ -207,7 +273,7 @@ export default function HeroSection() {
                       </div>
                     </div>
 
-                    {/* Columna Derecha - Marco de la Imagen Mejorado */}
+                    {/* Columna Derecha */}
                     <div className={`relative flex items-center justify-center w-full aspect-[4/3] sm:aspect-video md:aspect-auto md:h-full min-h-[260px] overflow-hidden ${styles.cardBg} ${image.padding || ''}`}>
                       <Image
                         src={image.src}
@@ -223,7 +289,6 @@ export default function HeroSection() {
                         draggable={false}
                       />
 
-                      {/* Gradiente sutil solo si está configurado para no solapar afiches completos */}
                       {styles.overlayGradient && (
                         <div className={`pointer-events-none absolute inset-y-0 left-0 z-10 hidden w-1/3 bg-gradient-to-r ${styles.overlayGradient} md:block`} />
                       )}
@@ -280,6 +345,122 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
+
+      {/* Modal / Formulario Emergente para Reserva de Cupos (Slides 2 y 3) */}
+      {isReserveModalOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 overflow-y-auto"
+          onClick={() => setIsReserveModalOpen(false)}
+        >
+          <div
+            className="relative w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl my-8"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Botón Cerrar */}
+            <button
+              type="button"
+              onClick={() => setIsReserveModalOpen(false)}
+              className="absolute right-4 top-4 rounded-full p-1 text-gray-400 hover:bg-gray-100 hover:text-gray-700 transition-colors"
+              aria-label="Cerrar ventana"
+            >
+              <X className="h-5 w-5" />
+            </button>
+
+            {/* Encabezado */}
+            <div className="mb-6">
+              <h3 className="text-2xl font-extrabold text-[#210053]">Reserva de Cupos</h3>
+              <p className="text-xs text-gray-600 mt-1">
+                1er Seminario: Créditos para Emprendedores. Ingresa tus datos para continuar por WhatsApp.
+              </p>
+            </div>
+
+            {/* Formulario */}
+            <form onSubmit={handleReserveSubmit} className="space-y-4">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <div>
+                  <label htmlFor="nombre" className="block text-xs font-bold text-gray-700 uppercase mb-1">
+                    Nombre *
+                  </label>
+                  <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    required
+                    value={reserveFormData.nombre}
+                    onChange={handleInputChange}
+                    placeholder="Ej. María"
+                    className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-800 placeholder-gray-400 focus:border-[#4d0092] focus:outline-none focus:ring-1 focus:ring-[#4d0092]"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="apellido" className="block text-xs font-bold text-gray-700 uppercase mb-1">
+                    Apellido *
+                  </label>
+                  <input
+                    type="text"
+                    id="apellido"
+                    name="apellido"
+                    required
+                    value={reserveFormData.apellido}
+                    onChange={handleInputChange}
+                    placeholder="Ej. Gómez"
+                    className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-800 placeholder-gray-400 focus:border-[#4d0092] focus:outline-none focus:ring-1 focus:ring-[#4d0092]"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="telefono" className="block text-xs font-bold text-gray-700 uppercase mb-1">
+                  Teléfono *
+                </label>
+                <input
+                  type="tel"
+                  id="telefono"
+                  name="telefono"
+                  required
+                  value={reserveFormData.telefono}
+                  onChange={handleInputChange}
+                  placeholder="+58 412 1234567"
+                  className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-800 placeholder-gray-400 focus:border-[#4d0092] focus:outline-none focus:ring-1 focus:ring-[#4d0092]"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="correo" className="block text-xs font-bold text-gray-700 uppercase mb-1">
+                  Correo Electrónico *
+                </label>
+                <input
+                  type="email"
+                  id="correo"
+                  name="correo"
+                  required
+                  value={reserveFormData.correo}
+                  onChange={handleInputChange}
+                  placeholder="ejemplo@correo.com"
+                  className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-800 placeholder-gray-400 focus:border-[#4d0092] focus:outline-none focus:ring-1 focus:ring-[#4d0092]"
+                />
+              </div>
+
+              <div className="pt-2 flex justify-end gap-3">
+                <button
+                  type="button"
+                  onClick={() => setIsReserveModalOpen(false)}
+                  className="rounded-full px-4 py-2 text-xs font-bold text-gray-600 hover:bg-gray-100 transition-colors"
+                >
+                  Cancelar
+                </button>
+                <button
+                  type="submit"
+                  className="rounded-full bg-green-600 px-5 py-2 text-xs font-bold text-white hover:bg-green-700 transition-colors shadow-md flex items-center gap-1.5"
+                >
+                  Reservar por WhatsApp
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

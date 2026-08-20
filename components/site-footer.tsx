@@ -257,7 +257,7 @@ export default function SiteFooter() {
 
   return (
     <>
-      <footer className="bg-[#0a1a4f] px-4 py-8 sm:px-6 lg:px-8">
+      <footer id="contacto" className="scroll-mt-24 bg-[#0a1a4f] px-4 py-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl overflow-hidden rounded-2xl bg-gradient-to-r from-green-700 via-green-900 to-[#0a1a4f]">
           {/* Top block */}
           <div className="grid grid-cols-1 gap-8 p-8 md:grid-cols-3 md:items-center">
@@ -269,7 +269,7 @@ export default function SiteFooter() {
             {/* Company info */}
             <div className="flex flex-col items-center gap-3 text-center md:items-start md:text-left">
               <a
-                href="#ser-sponsor"
+                href="#sponsor"
                 className="rounded-full bg-yellow-400 px-5 py-2 text-sm font-bold text-[#0a1a4f] transition-colors hover:bg-yellow-300"
               >
                 Quiero ser Sponsor

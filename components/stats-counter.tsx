@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
+import Image from "next/image"
 import { Users, Building2, Mic, Globe } from "lucide-react"
 
 type Stat = {
@@ -82,34 +83,58 @@ export default function StatsCounter() {
   }, [])
 
   return (
-    <section
-      id="congreso"
-      ref={sectionRef}
-      className="scroll-mt-24 sm:scroll-mt-28 relative w-full border-t-4 border-[#16a34a] bg-gradient-to-br from-[#0f52ba] via-[#3b2beb] to-[#0a18a8] py-8 md:py-10"
-      aria-labelledby="stats-heading"
-    >
-      <div className="mx-auto max-w-7xl px-4 md:px-8">
-        {/* Layout en 1 fila con 5 columnas en pantallas md/lg */}
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-5 md:gap-4 items-center">
+    <>
+      {/* Sección Stats Counter */}
+      <section
+        id="congreso"
+        ref={sectionRef}
+        className="scroll-mt-24 sm:scroll-mt-28 relative w-full border-t-4 border-[#16a34a] bg-gradient-to-br from-[#0f52ba] via-[#3b2beb] to-[#0a18a8] py-8 md:py-10"
+        aria-labelledby="stats-heading"
+      >
+        <div className="mx-auto max-w-7xl px-4 md:px-8">
+          {/* Layout en 1 fila con 5 columnas en pantallas md/lg */}
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-5 md:gap-4 items-center">
 
-          {/* Columna 1: Título "Congreso 2026-2027" */}
-          <div className="col-span-2 md:col-span-1 pr-2">
-            <h2
-              id="stats-heading"
-              className="text-2xl font-extrabold leading-tight tracking-tight text-white sm:text-3xl md:text-3xl lg:text-4xl"
-            >
-              Congreso <br className="hidden md:block" />
-              2026-2027
-            </h2>
+            {/* Columna 1: Título "Congreso 2026-2027" */}
+            <div className="col-span-2 md:col-span-1 pr-2">
+              <h2
+                id="stats-heading"
+                className="text-2xl font-extrabold leading-tight tracking-tight text-white sm:text-3xl md:text-3xl lg:text-4xl"
+              >
+                Congreso <br className="hidden md:block" />
+                2026-2027
+              </h2>
+            </div>
+
+            {/* Columnas 2 a 5: Tarjetas con Hover interactivo */}
+            {stats.map((stat, idx) => (
+              <StatCard key={idx} stat={stat} start={inView} />
+            ))}
+
+          </div>
+        </div>
+      </section>
+
+      {/* Sección Ruta del Crédito */}
+      <section id="ruta-del-credito" className="scroll-mt-24 sm:scroll-mt-28 w-full bg-white">
+        {/* Título superior centrado, más grande y con logo */}
+        <div className="mx-auto flex max-w-7xl items-center justify-center gap-4 px-4 py-12 sm:px-6 md:py-16 lg:px-8">
+          <div className="relative h-14 w-14 shrink-0 sm:h-16 sm:w-16 md:h-20 md:w-20">
+            <Image
+              src="/images/pin1.svg"
+              alt="Logo La Ruta del Crédito"
+              fill
+              sizes="(max-width: 640px) 56px, (max-width: 768px) 64px, 80px"
+              className="object-contain"
+              priority
+            />
           </div>
 
-          {/* Columnas 2 a 5: Tarjetas con Hover interactivo */}
-          {stats.map((stat, idx) => (
-            <StatCard key={idx} stat={stat} start={inView} />
-          ))}
-
+          <h2 className="text-balance text-3xl font-extrabold tracking-tight text-blue-950 md:text-4xl">
+            La Ruta del Crédito Venezuela 2026
+          </h2>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   )
 }

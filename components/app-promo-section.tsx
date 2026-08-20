@@ -37,7 +37,7 @@ function PhoneMockup() {
 
 export default function AppPromoSection() {
   return (
-    <section id="entradas" className="scroll-mt-24 sm:scroll-mt-28 laptop-fit bg-[#0f1e3d] px-4 py-8 sm:px-6 sm:py-10 md:py-12 lg:py-14 xl:py-18">
+    <section id="app" className="scroll-mt-24 sm:scroll-mt-28 laptop-fit bg-[#0f1e3d] px-4 py-8 sm:px-6 sm:py-10 md:py-12 lg:py-14 xl:py-18">
       {/* Contenedor fluido con límite max-w-7xl para pantallas ultranchan (14", 16"+) */}
       <div className="mx-auto max-w-7xl">
 

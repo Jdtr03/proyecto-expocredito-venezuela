@@ -3,7 +3,7 @@ import HeroSection from "@/components/hero-section"
 import SponsorsMarquee from "@/components/sponsors-marquee"
 import AboutSection from "@/components/about-section"
 import StatsCounter from "@/components/stats-counter"
-import RoadshowSection from "@/components/roadshow-section"
+//import RoadshowSection from "@/components/roadshow-section (<RoadshowSection />) "
 import EventHighlights from "@/components/event-highlights"
 import PartnersSection from "@/components/partners-section"
 import FloorPlanSection from "@/components/floor-plan-section"
@@ -19,7 +19,7 @@ export default function Page() {
       <SponsorsMarquee />
       <AboutSection />
       <StatsCounter />
-      <RoadshowSection />
+
       <EventHighlights />
       <PartnersSection />
       <FloorPlanSection />
