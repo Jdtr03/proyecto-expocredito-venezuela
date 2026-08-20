@@ -17,14 +17,14 @@ const sponsorPoints = [
 
 function PhoneMockup() {
   return (
-    <div className="mx-auto w-full max-w-[230px] sm:max-w-[270px] md:max-w-[290px] xl:max-w-[310px] rounded-[2.5rem] border-[6px] border-slate-700 bg-white shadow-2xl transition-all duration-300">
+    <div className="mx-auto w-full max-w-[210px] sm:max-w-[240px] md:max-w-[250px] lg:max-w-[270px] xl:max-w-[300px] rounded-[2.5rem] border-[5px] sm:border-[6px] border-slate-700 bg-white shadow-2xl transition-all duration-300">
       {/* Pantalla con relación de aspecto adaptativa */}
       <div className="relative aspect-[9/19] w-full overflow-hidden rounded-[2rem] bg-slate-900">
         <Image
           src="/images/app.jpeg"
           alt="Captura de pantalla de la app de la expo"
           fill
-          sizes="(max-width: 640px) 230px, (max-width: 768px) 270px, (max-width: 1280px) 290px, 310px"
+          sizes="(max-width: 640px) 210px, (max-width: 768px) 240px, (max-width: 1024px) 250px, (max-width: 1280px) 270px, 300px"
           priority
           className="object-cover object-top"
         />
@@ -37,51 +37,51 @@ function PhoneMockup() {
 
 export default function AppPromoSection() {
   return (
-    <section className="bg-[#0f1e3d] px-4 py-10 sm:px-6 sm:py-12 md:py-16 lg:py-20 xl:py-24">
+    <section className="laptop-fit bg-[#0f1e3d] px-4 py-8 sm:px-6 sm:py-10 md:py-12 lg:py-14 xl:py-18">
       {/* Contenedor fluido con límite max-w-7xl para pantallas ultranchan (14", 16"+) */}
       <div className="mx-auto max-w-7xl">
 
         {/* Encabezado Principal */}
-        <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-12 md:mb-16">
-          <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl">
+        <div className="mx-auto mb-6 max-w-3xl text-center sm:mb-8 md:mb-10 lg:mb-12">
+          <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl xl:text-5xl">
             Únete a la Expo{" "}
-            <span className="block text-base font-normal text-gray-300 sm:inline sm:text-lg md:text-xl lg:text-2xl">
+            <span className="block text-sm font-normal text-gray-300 sm:inline sm:text-base lg:text-xl xl:text-2xl">
               más esperada en Venezuela
             </span>
           </h2>
-          <p className="mt-3 text-pretty text-xs font-normal leading-relaxed text-gray-300 sm:mt-4 sm:text-sm md:text-base lg:text-lg">
+          <p className="mt-2.5 text-pretty text-xs font-normal leading-relaxed text-gray-300 sm:mt-3 sm:text-sm md:text-base">
             Espacios exclusivos para empresas, organizaciones y marcas reconocidas en el mercado con
             alto perfil de créditos y financiamientos en sus productos y servicios.
           </p>
         </div>
 
         {/* Layout Adaptativo */}
-        <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-8 xl:gap-12">
+        <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-6 xl:gap-10">
 
           {/* Columna Izquierda: App Oficial */}
           <div className="order-2 flex flex-col items-center text-center md:order-1 md:col-span-1 lg:order-1 lg:items-end lg:text-right">
             <div className="w-full max-w-xs sm:max-w-sm">
-              <h3 className="text-xl font-semibold text-white sm:text-2xl md:text-3xl">
+              <h3 className="text-lg font-semibold text-white sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl">
                 App oficial
               </h3>
-              <p className="mt-2 text-xs leading-relaxed text-gray-400 sm:text-sm">
+              <p className="mt-1.5 text-xs leading-relaxed text-gray-400 sm:text-sm">
                 El principal diferenciador de este evento es su integración tecnológica.
               </p>
             </div>
 
             {/* Logo de Venexpo - Más notorio con sombra y padding mejorado */}
-            <div className="mt-6 inline-flex items-center justify-center rounded-2xl bg-white p-3 sm:p-4 shadow-xl ring-1 ring-black/5 sm:rounded-3xl transition-transform hover:scale-105 duration-300">
+            <div className="mt-5 inline-flex items-center justify-center rounded-2xl bg-white p-2.5 sm:p-3.5 shadow-xl ring-1 ring-black/5 sm:rounded-3xl transition-transform hover:scale-105 duration-300">
               <Image
                 src="/images/logos/web-expo.webp"
                 alt="Logo Venexpo oficial"
                 width={180}
                 height={80}
-                className="h-14 w-auto object-contain sm:h-16 md:h-20"
+                className="h-12 w-auto object-contain sm:h-14 md:h-16 lg:h-18"
               />
             </div>
 
             {/* Botones de Tiendas - Incrementados de tamaño uniformemente */}
-            <div className="mt-7 flex flex-col items-center justify-center gap-3.5 sm:flex-row sm:gap-4 lg:flex-col lg:items-end">
+            <div className="mt-5 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-3.5 lg:flex-col lg:items-end">
 
               {/* Google Play Store */}
               <a
@@ -89,14 +89,14 @@ export default function AppPromoSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Disponible en Google Play"
-                className="group relative flex h-14 w-52 items-center justify-center overflow-hidden rounded-2xl border border-white/15 bg-black/50 shadow-lg backdrop-blur-md transition-all duration-300 hover:scale-105 hover:bg-black/70 hover:border-white/30 hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-orange-500 active:scale-95 sm:h-16 sm:w-56"
+                className="group relative flex h-12 w-48 items-center justify-center overflow-hidden rounded-2xl border border-white/15 bg-black/50 shadow-lg backdrop-blur-md transition-all duration-300 hover:scale-105 hover:bg-black/70 hover:border-white/30 hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-orange-500 active:scale-95 sm:h-14 sm:w-52"
               >
-                <div className="relative h-10 w-40 sm:h-11 sm:w-44">
+                <div className="relative h-9 w-36 sm:h-10 sm:w-40">
                   <Image
                     src="/Venexpo-app.webp"
                     alt="Disponible en Google Play"
                     fill
-                    sizes="(max-width: 640px) 160px, 176px"
+                    sizes="(max-width: 640px) 144px, 160px"
                     className="object-contain transition-transform duration-300 group-hover:scale-105 pointer-events-none"
                   />
                 </div>
@@ -108,14 +108,14 @@ export default function AppPromoSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Descargar en App Store"
-                className="group relative flex h-14 w-52 items-center justify-center overflow-hidden rounded-2xl border border-white/15 bg-black/50 shadow-lg backdrop-blur-md transition-all duration-300 hover:scale-105 hover:bg-black/70 hover:border-white/30 hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-orange-500 active:scale-95 sm:h-16 sm:w-56"
+                className="group relative flex h-12 w-48 items-center justify-center overflow-hidden rounded-2xl border border-white/15 bg-black/50 shadow-lg backdrop-blur-md transition-all duration-300 hover:scale-105 hover:bg-black/70 hover:border-white/30 hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-orange-500 active:scale-95 sm:h-14 sm:w-52"
               >
-                <div className="relative h-10 w-40 sm:h-11 sm:w-44">
+                <div className="relative h-9 w-36 sm:h-10 sm:w-40">
                   <Image
                     src="/Ven-expo-app.webp"
                     alt="Descargar en App Store"
                     fill
-                    sizes="(max-width: 640px) 160px, 176px"
+                    sizes="(max-width: 640px) 144px, 160px"
                     className="object-contain transition-transform duration-300 group-hover:scale-105 pointer-events-none"
                   />
                 </div>
@@ -124,8 +124,8 @@ export default function AppPromoSection() {
             </div>
 
             {/* Cuadro de aviso para adquirir entradas */}
-            <div className="mt-8 w-full max-w-xs sm:max-w-sm rounded-2xl border border-white/10 bg-slate-800/60 p-4 text-center shadow-lg backdrop-blur-sm lg:text-right">
-              <h4 className="text-sm font-bold text-white sm:text-base md:text-lg">
+            <div className="mt-6 w-full max-w-xs sm:max-w-sm rounded-2xl border border-white/10 bg-slate-800/60 p-3.5 sm:p-4 text-center shadow-lg backdrop-blur-sm lg:text-right">
+              <h4 className="text-xs font-bold text-white sm:text-sm md:text-base">
                 Adquiere tus entradas en Venexpo
               </h4>
               <p className="mt-1 text-xs text-gray-300">

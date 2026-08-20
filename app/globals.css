@@ -176,3 +176,10 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Escala adaptativa automática al 75% exclusiva para laptops y pantallas <= 16" (640px a 1535px) */
+@media (min-width: 640px) and (max-width: 1535px) {
+  .laptop-fit {
+    zoom: 0.75;
+  }
+}

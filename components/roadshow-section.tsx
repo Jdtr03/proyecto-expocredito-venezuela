@@ -70,11 +70,13 @@ export default function RoadshowSection() {
               Sábado 15 de Agosto 2026
             </p>
 
-            <div className="ml-auto max-w-md overflow-hidden rounded-lg shadow-2xl ring-1 ring-white/10">
-              <img
+            <div className="relative ml-auto h-56 w-full max-w-md overflow-hidden rounded-lg shadow-2xl ring-1 ring-white/10 sm:h-64 lg:h-72">
+              <Image
                 src="/images/roadshow-businessmen.png"
                 alt="Dos emprendedores en la Expo Créditos Venezuela 2026"
-                className="max-h-56 sm:max-h-64 lg:max-h-72 w-full object-cover"
+                fill
+                sizes="(max-width: 768px) 100vw, 448px"
+                className="object-cover"
               />
             </div>
           </div>

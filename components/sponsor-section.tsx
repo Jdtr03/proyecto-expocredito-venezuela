@@ -131,24 +131,24 @@ Deseo recibir el dossier comercial.`
   return (
     <section
       aria-labelledby="sponsor-heading"
-      className="relative flex min-h-[60vh] w-full flex-col items-center justify-center overflow-hidden bg-gradient-to-r from-[#008135] via-blue-900 to-[#008135] py-8 sm:min-h-[70vh] sm:py-10 md:py-12 lg:min-h-[75vh]"
+      className="laptop-fit relative flex min-h-[50vh] w-full flex-col items-center justify-center overflow-hidden bg-gradient-to-r from-[#008135] via-blue-900 to-[#008135] py-6 sm:min-h-[60vh] sm:py-8 md:py-10 lg:py-12"
     >
       {/* Encabezado */}
-      <header className="mx-auto mb-4 max-w-4xl space-y-1.5 px-4 text-center sm:mb-6">
+      <header className="mx-auto mb-3 max-w-4xl space-y-1 px-4 text-center sm:mb-5">
         <h2
           id="sponsor-heading"
-          className="text-balance text-2xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl"
+          className="text-balance text-2xl font-extrabold tracking-tight text-white sm:text-3xl lg:text-4xl xl:text-5xl"
         >
           Tu Marca Aquí
         </h2>
-        <p className="text-pretty text-xs font-medium text-white/90 sm:text-base">
+        <p className="text-pretty text-xs font-medium text-white/90 sm:text-sm md:text-base">
           Con planes de Financiamiento Pre-Venta{" "}
           <span className="font-bold text-white">30% de Descuento</span>
         </p>
       </header>
 
       {/* CARRUSEL INFINITO CON DRAG Y MOVIMIENTO AUTOMÁTICO */}
-      <div className="relative my-2 w-full overflow-hidden py-2 sm:my-4 sm:py-4 cursor-grab active:cursor-grabbing">
+      <div className="relative my-2 w-full overflow-hidden py-2 sm:my-3 sm:py-3 cursor-grab active:cursor-grabbing">
         <motion.div
           ref={containerRef}
           style={{ x: xTranslation }}
@@ -159,19 +159,19 @@ Deseo recibir el dossier comercial.`
           }}
           onDragStart={() => setIsDragging(true)}
           onDragEnd={() => setIsDragging(false)}
-          className="flex w-max gap-4 sm:gap-6"
+          className="flex w-max gap-3.5 sm:gap-5"
         >
           {duplicatedImages.map((item, index) => (
             <div
               key={`${item.id}-${index}`}
               onClick={() => handleCardClick(item)}
-              className="group/card relative aspect-[16/10] h-auto w-[260px] shrink-0 overflow-hidden rounded-2xl bg-white/10 shadow-xl backdrop-blur-sm transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl sm:w-[360px] sm:rounded-[2rem] md:w-[440px] lg:w-[500px] xl:w-[540px] select-none"
+              className="group/card relative aspect-[16/10] h-auto w-[230px] shrink-0 overflow-hidden rounded-2xl bg-white/10 shadow-xl backdrop-blur-sm transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl sm:w-[300px] sm:rounded-[2rem] md:w-[350px] lg:w-[410px] xl:w-[480px] 2xl:w-[540px] select-none"
             >
               <Image
                 src={item.src}
                 alt={item.alt}
                 fill
-                sizes="(max-width: 640px) 260px, (max-width: 768px) 360px, (max-width: 1024px) 440px, 540px"
+                sizes="(max-width: 640px) 230px, (max-width: 768px) 300px, (max-width: 1024px) 350px, (max-width: 1280px) 410px, 480px"
                 className="object-cover transition-transform duration-500 group-hover/card:scale-105 pointer-events-none"
                 priority={index < 3}
               />
@@ -188,12 +188,12 @@ Deseo recibir el dossier comercial.`
       </div>
 
       {/* Botones de Acción */}
-      <div className="mt-6 flex flex-col items-center justify-center gap-4 px-4 sm:mt-8 sm:flex-row sm:gap-8">
+      <div className="mt-4 flex flex-col items-center justify-center gap-3.5 px-4 sm:mt-6 sm:flex-row sm:gap-6">
         <a
           href="/Catalogo-Expo-Credito.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-xs font-medium text-white transition hover:text-gray-200 sm:text-base"
+          className="inline-flex items-center gap-2 text-xs font-medium text-white transition hover:text-gray-200 sm:text-sm md:text-base"
         >
           <FileText className="h-4 w-4" aria-hidden="true" />
           Solicita Dossier Comercial
@@ -202,7 +202,7 @@ Deseo recibir el dossier comercial.`
         <button
           onClick={() => setIsFormOpen(true)}
           type="button"
-          className="inline-flex items-center justify-center rounded-full bg-red-600 px-6 py-3 text-xs font-bold text-white shadow-lg transition-transform duration-200 hover:scale-105 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 sm:px-8 sm:py-3.5 sm:text-base"
+          className="inline-flex items-center justify-center rounded-full bg-red-600 px-6 py-3 text-xs font-bold text-white shadow-lg transition-transform duration-200 hover:scale-105 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 sm:px-8 sm:py-3.5 sm:text-sm md:text-base"
         >
           Ser Sponsor de Expo Créditos VE
         </button>
@@ -254,7 +254,7 @@ Deseo recibir el dossier comercial.`
                       value={formData.empresa}
                       onChange={handleChange}
                       placeholder="Ej: Banco o Empresa C.A."
-                      className="w-full rounded-xl bg-white/5 border border-white/10 px-3.5 py-2 text-xs sm:text-sm text-white placeholder-gray-500 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                      className="w-full min-h-[44px] rounded-xl bg-white/5 border border-white/10 px-3.5 py-2.5 text-xs sm:text-sm text-white placeholder-gray-500 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
                     />
                   </div>
 
@@ -269,7 +269,7 @@ Deseo recibir el dossier comercial.`
                       value={formData.contacto}
                       onChange={handleChange}
                       placeholder="Ej: María Pérez"
-                      className="w-full rounded-xl bg-white/5 border border-white/10 px-3.5 py-2 text-xs sm:text-sm text-white placeholder-gray-500 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                      className="w-full min-h-[44px] rounded-xl bg-white/5 border border-white/10 px-3.5 py-2.5 text-xs sm:text-sm text-white placeholder-gray-500 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
                     />
                   </div>
 
@@ -284,7 +284,7 @@ Deseo recibir el dossier comercial.`
                       value={formData.telefono}
                       onChange={handleChange}
                       placeholder="Ej: +58 412 1234567"
-                      className="w-full rounded-xl bg-white/5 border border-white/10 px-3.5 py-2 text-xs sm:text-sm text-white placeholder-gray-500 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                      className="w-full min-h-[44px] rounded-xl bg-white/5 border border-white/10 px-3.5 py-2.5 text-xs sm:text-sm text-white placeholder-gray-500 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
                     />
                   </div>
 
@@ -299,7 +299,7 @@ Deseo recibir el dossier comercial.`
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="contacto@empresa.com"
-                      className="w-full rounded-xl bg-white/5 border border-white/10 px-3.5 py-2 text-xs sm:text-sm text-white placeholder-gray-500 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                      className="w-full min-h-[44px] rounded-xl bg-white/5 border border-white/10 px-3.5 py-2.5 text-xs sm:text-sm text-white placeholder-gray-500 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
                     />
                   </div>
 
@@ -313,13 +313,13 @@ Deseo recibir el dossier comercial.`
                       value={formData.web}
                       onChange={handleChange}
                       placeholder="Ej: www.empresa.com / @empresa"
-                      className="w-full rounded-xl bg-white/5 border border-white/10 px-3.5 py-2 text-xs sm:text-sm text-white placeholder-gray-500 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                      className="w-full min-h-[44px] rounded-xl bg-white/5 border border-white/10 px-3.5 py-2.5 text-xs sm:text-sm text-white placeholder-gray-500 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-[#008135] px-6 py-3 text-sm font-bold text-white shadow-lg transition hover:bg-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-400"
+                    className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-[#008135] px-6 py-3 text-sm font-bold text-white shadow-lg transition hover:bg-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-400 min-h-[44px]"
                   >
                     <Send className="h-4 w-4" />
                     Enviar datos por WhatsApp
@@ -352,7 +352,7 @@ Deseo recibir el dossier comercial.`
           onClick={() => setSelectedImage(null)}
         >
           <div
-            className="relative max-h-[90vh] max-w-7xl overflow-hidden rounded-2xl bg-black shadow-2xl"
+            className="relative max-h-[90vh] max-w-7xl overflow-y-auto rounded-2xl bg-black shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Botón Cerrar */}

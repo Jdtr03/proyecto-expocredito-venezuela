@@ -70,14 +70,14 @@ export default function EventHighlights() {
   }
 
   return (
-    <section className="overflow-hidden bg-gray-50 py-10 md:py-14 lg:py-16">
+    <section className="laptop-fit overflow-hidden bg-gray-50 py-8 sm:py-10 md:py-12 lg:py-14">
       <div className="mx-auto max-w-7xl px-4">
         {/* Encabezado Principal */}
-        <header className="mx-auto mb-8 max-w-2xl text-center md:mb-12">
-          <h2 className="text-balance text-3xl font-extrabold tracking-tight text-blue-950 md:text-4xl">
+        <header className="mx-auto mb-6 max-w-2xl text-center md:mb-8">
+          <h2 className="text-balance text-2xl font-extrabold tracking-tight text-blue-950 sm:text-3xl lg:text-4xl">
             Expo Créditos Venezuela
           </h2>
-          <p className="mt-3 text-pretty text-sm leading-relaxed text-gray-600 md:text-base">
+          <p className="mt-2.5 text-pretty text-xs leading-relaxed text-gray-600 sm:text-sm md:text-base">
             Es el evento de mayor impacto: reunimos a las empresas y organizaciones que otorgan créditos y
             financiamientos en sus productos y servicios.
           </p>
@@ -85,7 +85,7 @@ export default function EventHighlights() {
       </div>
 
       {/* CARRUSEL DE ANCHO COMPLETO CON DRAG Y BUCLE AUTOMÁTICO */}
-      <div className="relative w-full overflow-hidden py-4 cursor-grab active:cursor-grabbing">
+      <div className="relative w-full overflow-hidden py-3 sm:py-4 cursor-grab active:cursor-grabbing">
         <motion.div
           ref={containerRef}
           style={{ x: xTranslation }}
@@ -96,26 +96,26 @@ export default function EventHighlights() {
           }}
           onDragStart={() => setIsDragging(true)}
           onDragEnd={() => setIsDragging(false)}
-          className="flex w-max gap-6"
+          className="flex w-max gap-4 sm:gap-6"
         >
           {duplicatedImages.map((item, index) => (
             <div
               key={`${item.id}-${index}`}
               onClick={() => handleCardClick(item)}
-              className="group/card relative h-auto w-[240px] shrink-0 overflow-hidden rounded-3xl shadow-lg transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl sm:w-[280px] md:w-[360px] aspect-[3/4] select-none"
+              className="group/card relative h-auto w-[220px] shrink-0 overflow-hidden rounded-2xl shadow-lg transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl sm:w-[250px] sm:rounded-3xl md:w-[270px] lg:w-[300px] xl:w-[340px] 2xl:w-[360px] aspect-[3/4] select-none"
             >
               <Image
                 src={item.src}
                 alt={item.alt}
                 fill
-                sizes="(max-width: 640px) 240px, (max-width: 768px) 280px, 360px"
+                sizes="(max-width: 640px) 220px, (max-width: 768px) 250px, (max-width: 1024px) 270px, (max-width: 1280px) 300px, 340px"
                 className="object-cover transition-transform duration-500 group-hover/card:scale-105 pointer-events-none"
                 priority={index < 4}
               />
 
               {/* Overlay en Hover */}
               <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 backdrop-blur-[2px] transition-opacity duration-300 group-hover/card:opacity-100">
-                <span className="rounded-full bg-white/90 px-5 py-2.5 text-xs font-bold text-gray-900 shadow-md">
+                <span className="rounded-full bg-white/90 px-4 py-2 text-xs font-bold text-gray-900 shadow-md sm:px-5 sm:py-2.5">
                   Ver Detalles
                 </span>
               </div>
@@ -126,10 +126,10 @@ export default function EventHighlights() {
 
       {/* Botón CTA Inferior */}
       <div className="mx-auto max-w-7xl px-4">
-        <div className="mt-10 flex justify-center md:mt-16">
+        <div className="mt-8 flex justify-center md:mt-12">
           <button
             type="button"
-            className="rounded-full bg-red-600 px-10 py-3.5 text-sm font-bold text-white shadow-lg transition-colors hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+            className="rounded-full bg-red-600 px-8 py-3 text-xs font-bold text-white shadow-lg transition-colors hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 sm:px-10 sm:py-3.5 sm:text-sm"
           >
             Ser Sponsor de Expo Créditos VE
           </button>
@@ -139,25 +139,25 @@ export default function EventHighlights() {
       {/* MODAL POP-UP (Lightbox) */}
       {selectedImage && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm animate-in fade-in duration-200"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-3 sm:p-4 backdrop-blur-sm animate-in fade-in duration-200"
           onClick={() => setSelectedImage(null)}
         >
           <div
-            className="relative max-h-[95vh] max-w-7xl overflow-hidden rounded-2xl bg-black shadow-2xl"
+            className="relative max-h-[90vh] max-w-7xl overflow-y-auto rounded-2xl bg-black shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Botón Cerrar (X) */}
             <button
               onClick={() => setSelectedImage(null)}
               type="button"
-              className="absolute right-5 top-5 z-10 flex h-12 w-12 items-center justify-center rounded-full bg-black/60 text-white transition-colors hover:bg-black/90 focus:outline-none"
+              className="absolute right-3 top-3 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-black/60 text-white transition-colors hover:bg-black/90 focus:outline-none sm:right-5 sm:top-5 sm:h-12 sm:w-12"
               aria-label="Cerrar ventana"
             >
-              <X className="h-7 w-7" />
+              <X className="h-6 w-6 sm:h-7 sm:w-7" />
             </button>
 
             {/* Contenedor de la Imagen Modal */}
-            <div className="relative h-[85vh] w-[90vw] max-w-6xl">
+            <div className="relative h-[70vh] w-[88vw] max-w-6xl sm:h-[80vh] sm:w-[90vw]">
               <Image
                 src={selectedImage.src}
                 alt={selectedImage.alt}

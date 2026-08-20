@@ -1,5 +1,7 @@
 "use client"
 
+import Image from "next/image"
+
 // Fila 1: 7 Bancos e Instituciones
 const ROW_1 = [
   { name: "BDV", logo: "/images/logos/bdv.png", scale: "scale-100" },
@@ -34,11 +36,12 @@ function SponsorLogo({ sponsor }: { sponsor: Sponsor }) {
       {/* El div interno aplica la escala personalizada fija */}
       <div className={`flex h-full w-full items-center justify-center ${sponsor.scale}`}>
         {/* La imagen aplica el efecto zoom leve (+10%) en hover sin romper la escala base */}
-        <img
+        <Image
           src={sponsor.logo}
           alt={`Logo ${sponsor.name}`}
+          width={144}
+          height={56}
           className="max-h-full max-w-full object-contain transition-transform duration-300 hover:scale-110"
-          loading="lazy"
         />
       </div>
     </div>
