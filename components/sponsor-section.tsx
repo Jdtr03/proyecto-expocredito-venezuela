@@ -188,20 +188,24 @@ Deseo recibir el dossier comercial.`
       </div>
 
       {/* Botones de Acción */}
-      <div className="mt-4 flex flex-col items-center justify-center gap-3.5 px-4 sm:mt-6 sm:flex-row sm:gap-6">
+      <div className="mt-4 flex flex-col items-center justify-center gap-2 px-4 text-center sm:mt-6">
+        {/* Título sobre el botón */}
         <a
-          href="/Catalogo-Expo-Credito.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-xs font-medium text-white transition hover:text-gray-200 sm:text-sm md:text-base"
+          href="#"
+          onClick={(e) => {
+            e.preventDefault()
+            setIsFormOpen(true)
+          }}
+          className="inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-white/90 transition hover:text-white sm:text-base md:text-lg"
         >
-          <FileText className="h-4 w-4" aria-hidden="true" />
-          Solicita Dossier Comercial
+          <FileText className="h-4 w-4 sm:h-5 sm:w-5" aria-hidden="true" />
+          Solicita Tu Dossier Comercial
         </a>
 
+        {/* Botón Principal */}
         <button
-          onClick={() => setIsFormOpen(true)}
           type="button"
+          onClick={() => setIsFormOpen(true)}
           className="inline-flex items-center justify-center rounded-full bg-[#00A859] px-6 py-3 text-xs font-bold text-white shadow-lg transition-transform duration-200 hover:scale-105 hover:bg-[#008f4c] focus:outline-none focus:ring-2 focus:ring-[#00A859] focus:ring-offset-2 sm:px-8 sm:py-3.5 sm:text-sm md:text-base"
         >
           Ser Sponsor de Expo Créditos VE

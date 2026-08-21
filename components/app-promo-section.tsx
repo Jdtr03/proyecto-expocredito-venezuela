@@ -37,12 +37,23 @@ function PhoneMockup() {
 
 export default function AppPromoSection() {
   return (
-    <section id="app" className="scroll-mt-24 sm:scroll-mt-28 laptop-fit bg-[#0f1e3d] px-4 py-8 sm:px-6 sm:py-10 md:py-12 lg:py-14 xl:py-18">
+    <section id="app" className="scroll-mt-24 sm:scroll-mt-28 laptop-fit bg-[#0f1e4d] px-4 py-8 sm:px-6 sm:py-10 md:py-12 lg:py-14 xl:py-18">
       {/* Contenedor fluido con límite max-w-7xl para pantallas ultranchan (14", 16"+) */}
       <div className="mx-auto max-w-7xl">
 
         {/* Encabezado Principal */}
         <div className="mx-auto mb-6 max-w-3xl text-center sm:mb-8 md:mb-10 lg:mb-12">
+
+          {/* Botón rojo estilo 'pill' sobre el título */}
+          <div className="mb-4">
+            <a
+              href="#app"
+              className="inline-block rounded-full bg-[#E50914] px-7 py-2.5 text-xs font-bold text-white shadow-md transition-all duration-200 hover:bg-red-700 hover:scale-105 active:scale-95 sm:px-9 sm:py-3 sm:text-sm"
+            >
+              Adquiere tu entrada en Venexpo
+            </a>
+          </div>
+
           <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl xl:text-5xl">
             Únete a la Expo{" "}
             <span className="block text-sm font-normal text-gray-300 sm:inline sm:text-base lg:text-xl xl:text-2xl">
@@ -69,7 +80,7 @@ export default function AppPromoSection() {
               </p>
             </div>
 
-            {/* Logo de Venexpo - Más notorio con sombra y padding mejorado */}
+            {/* Logo de Venexpo */}
             <div className="mt-5 inline-flex items-center justify-center rounded-2xl bg-white p-2.5 sm:p-3.5 shadow-xl ring-1 ring-black/5 sm:rounded-3xl transition-transform hover:scale-105 duration-300">
               <Image
                 src="/images/logos/web-expo.webp"
@@ -80,7 +91,7 @@ export default function AppPromoSection() {
               />
             </div>
 
-            {/* Botones de Tiendas - Incrementados de tamaño uniformemente */}
+            {/* Botones de Tiendas */}
             <div className="mt-5 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-3.5 lg:flex-col lg:items-end">
 
               {/* Google Play Store */}
