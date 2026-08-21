@@ -204,7 +204,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="inicio" className="relative overflow-hidden bg-[url('/images/b-a.png')] bg-cover bg-center pt-4 sm:pt-6 xl:pt-8 pb-0">
+    <section id="inicio" className="relative overflow-hidden bg-cover bg-center pt-4 sm:pt-6 xl:pt-8 pb-0" style={{ backgroundImage: "url('/images/b-a.png')" }}>
       <div className="relative mx-auto flex w-full max-w-5xl xl:max-w-7xl flex-col px-4 sm:px-6 lg:px-8">
 
         {/* Carousel Container */}
